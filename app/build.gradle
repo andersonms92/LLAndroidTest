@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.navigation.safeargs)
 }
 
 android {
     namespace 'com.llandroidtest'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.llandroidtest"
@@ -33,12 +34,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.5.1'
-    }
+//    buildFeatures {
+//        compose true
+//    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion '1.5.1'
+//    }
     packaging {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
@@ -47,16 +48,21 @@ android {
 }
 
 dependencies {
+    implementation libs.fragmentKtx
+    implementation libs.androidx.navigation.ui.ktx
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.cardview
 
+    // Glide
     implementation libs.glide
-    implementation libs.glideCompiler
 
+    // Material Design
     implementation libs.materialDesign
+
+    // RecyclerView
     implementation libs.androidx.recyclerview
 
     testImplementation libs.junit
