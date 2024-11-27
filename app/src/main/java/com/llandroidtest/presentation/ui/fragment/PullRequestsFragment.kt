@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
-import com.llandroidtest.domain.model.PullRequestModel
 import com.llandroidtest.presentation.adapter.PullRequestsAdapter
 
 class PullRequestsFragment : Fragment() {
@@ -29,23 +27,8 @@ class PullRequestsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val pullRequestModels = listOf(
-            PullRequestModel(
-                title = "Pull Request 1",
-                description = "Description for PR 1",
-                username = "chaoslune",
-                fullName = "Anderson de Matos"
-            ),
-            PullRequestModel(
-                title = "Pull Request 2",
-                description = "Description for PR 2",
-                username = "hammerfall",
-                fullName = "Robson de Matos"
-            )
-        )
-
-        adapter = PullRequestsAdapter(pullRequestModels)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = adapter
+//        adapter = PullRequestsAdapter(pullRequests)
+//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+//        recyclerView.adapter = adapter
     }
 }

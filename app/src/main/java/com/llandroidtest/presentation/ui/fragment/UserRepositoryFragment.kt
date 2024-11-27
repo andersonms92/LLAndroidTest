@@ -5,17 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
 import com.llandroidtest.presentation.adapter.UserRepositoryAdapter
-import com.llandroidtest.domain.model.UserRepositoryModel
+import com.llandroidtest.data.model.RepositoryResponse
+import com.llandroidtest.presentation.viewmodel.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class UserRepositoryFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: UserRepositoryAdapter
+    private val sharedViewModel: SharedViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,35 +37,23 @@ class UserRepositoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        lifecycleScope.launch {
+            sharedViewModel.repositoryList.collect { repositories ->
+            }
 
-        val repositories = listOf(
-            UserRepositoryModel(
-                userPhotoUrl = "https://via.placeholder.com/64",
-                userName = "chaoslune",
-                name = "Anderson Matos",
-                repositoryName = "Luiza Labs Android Test",
-                repositoryDescription = "A test repository for Android development.",
-                forksCount = 120,
-                likesCount = 300
-            ),
-            UserRepositoryModel(
-                userPhotoUrl = "https://via.placeholder.com/64",
-                userName = "johndoe",
-                name = "John Doe",
-                repositoryName = "Awesome Kotlin Project",
-                repositoryDescription = "An amazing project built with Kotlin.",
-                forksCount = 75,
-                likesCount = 450
-            )
-        )
+            sharedViewModel.isLoading.collect { isLoading ->
+            }
 
-        adapter = UserRepositoryAdapter(repositories) { repository ->
-            val action = UserRepositoryFragmentDirections
-                .actionUserRepositoryToPullRequests(repository.repositoryName)
-            this.view?.let { findNavController(it).navigate(action) }
+            sharedViewModel.getRepositories(query = "Kotlin", page = 1)
         }
 
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = adapter
+//        adapter = UserRepositoryAdapter(repositories) { repository ->
+//            val action = UserRepositoryFragmentDirections
+//                .actionUserRepositoryToPullRequests(repository.repositoryName)
+//            this.view?.let { findNavController(it).navigate(action) }
+//        }
+
+//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+//        recyclerView.adapter = adapter
     }
 }

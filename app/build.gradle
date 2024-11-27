@@ -38,6 +38,7 @@ android {
     packaging {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
 }
@@ -85,6 +86,9 @@ dependencies {
     implementation(libs.rxjava)
     implementation(libs.rxandroid)
     implementation(libs.retrofit.adapter.rxjava3)
+
+    // Timber
+    implementation(libs.timber)
 
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
