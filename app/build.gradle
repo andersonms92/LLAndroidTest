@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.navigation.safeargs)
 }
 
 android {
     namespace 'com.llandroidtest'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.llandroidtest"
@@ -33,12 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.5.1'
-    }
+
     packaging {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
@@ -47,17 +43,48 @@ android {
 }
 
 dependencies {
+    implementation libs.fragmentKtx
+    implementation libs.androidx.navigation.ui.ktx
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.cardview
 
+    // Glide
     implementation libs.glide
-    implementation libs.glideCompiler
 
+    // Material Design
     implementation libs.materialDesign
+
+    // RecyclerView
     implementation libs.androidx.recyclerview
+
+    // Retrofit e OkHTTP
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
+
+    // Dagger
+    implementation(libs.dagger)
+    implementation(libs.dagger.android)
+    implementation(libs.dagger.android.support)
+    implementation(libs.dagger.compiler)
+    implementation(libs.dagger.android.processor)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.android.compiler)
+    testImplementation(libs.hilt.android.testing)
+    testImplementation(libs.hilt.android.compiler)
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.hilt.android.compiler)
+
+    // RxJava
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+    implementation(libs.retrofit.adapter.rxjava3)
 
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
