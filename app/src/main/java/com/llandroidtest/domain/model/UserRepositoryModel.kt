@@ -1,6 +1,6 @@
 package com.llandroidtest.domain.model
 
-data class UserRepository(
+data class UserRepositoryModel(
     val userPhotoUrl: String,
     val userName: String,
     val name: String,

@@ -8,11 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.llandroidtest.R
-import com.llandroidtest.domain.model.UserRepository
+import com.llandroidtest.domain.model.UserRepositoryModel
 
 class UserRepositoryAdapter(
-    private val repositories: List<UserRepository>,
-    private val onItemClick: (UserRepository) -> Unit
+    private val repositories: List<UserRepositoryModel>,
+    private val onItemClick: (UserRepositoryModel) -> Unit
 ) : RecyclerView.Adapter<UserRepositoryAdapter.RepositoryViewHolder>() {
 
     inner class RepositoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -24,7 +24,7 @@ class UserRepositoryAdapter(
         private val tvForksCount: TextView = itemView.findViewById(R.id.tvForksCount)
         private val tvLikesCount: TextView = itemView.findViewById(R.id.tvLikesCount)
 
-        fun bind(repository: UserRepository) {
+        fun bind(repository: UserRepositoryModel) {
             Glide.with(itemView.context).load(repository.userPhotoUrl).into(imgUserPhoto)
             tvUserName.text = repository.userName
             tvName.text = repository.name

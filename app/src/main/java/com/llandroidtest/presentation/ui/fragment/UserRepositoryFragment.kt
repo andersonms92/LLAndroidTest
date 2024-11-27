@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
 import com.llandroidtest.presentation.adapter.UserRepositoryAdapter
-import com.llandroidtest.domain.model.UserRepository
+import com.llandroidtest.domain.model.UserRepositoryModel
 
 class UserRepositoryFragment : Fragment() {
 
@@ -31,7 +31,7 @@ class UserRepositoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val repositories = listOf(
-            UserRepository(
+            UserRepositoryModel(
                 userPhotoUrl = "https://via.placeholder.com/64",
                 userName = "chaoslune",
                 name = "Anderson Matos",
@@ -40,7 +40,7 @@ class UserRepositoryFragment : Fragment() {
                 forksCount = 120,
                 likesCount = 300
             ),
-            UserRepository(
+            UserRepositoryModel(
                 userPhotoUrl = "https://via.placeholder.com/64",
                 userName = "johndoe",
                 name = "John Doe",
