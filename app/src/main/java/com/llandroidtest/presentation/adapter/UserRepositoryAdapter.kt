@@ -27,11 +27,11 @@ class UserRepositoryAdapter(
             userName.text = repository.owner.login
             repositoryName.text = repository.name
             repositoryDescription.text = repository.description ?: "No description available"
-            forksCount.text = repository.forks_count.toString()
-            likesCount.text = repository.stargazers_count.toString()
+            forksCount.text = repository.forksCount.toString()
+            likesCount.text = repository.stargazersCount.toString()
 
             Glide.with(itemView.context)
-                .load(repository.owner.avatar_url)
+                .load(repository.owner.avatarUrl)
                 .circleCrop()
                 .into(userPhoto)
 

@@ -22,6 +22,9 @@ class SharedViewModel @Inject constructor(
     private val _pullRequests = MutableLiveData<Resource<List<PullRequestResponse>>>()
     val pullRequests: LiveData<Resource<List<PullRequestResponse>>> = _pullRequests
 
+    private val _pullRequestsClosed = MutableLiveData<Resource<List<PullRequestResponse>>>()
+    val pullRequestsClosed: LiveData<Resource<List<PullRequestResponse>>> = _pullRequestsClosed
+
     fun getRepositories(query: String, page: Int) {
         viewModelScope.launch {
             _repositories.postValue(Resource.Loading())
@@ -42,6 +45,18 @@ class SharedViewModel @Inject constructor(
                 _pullRequests.postValue(Resource.Success(response))
             } catch (e: Exception) {
                 _pullRequests.postValue(Resource.Error(e.message ?: "Unknown error"))
+            }
+        }
+    }
+
+    fun getPullRequestsClosed(owner: String, repo: String) {
+        viewModelScope.launch {
+            _pullRequestsClosed.postValue(Resource.Loading())
+            try {
+                val response = githubRepository.getPullRequestsClosed(owner, repo)
+                _pullRequestsClosed.postValue(Resource.Success(response))
+            } catch (e: Exception) {
+                _pullRequestsClosed.postValue(Resource.Error(e.message ?: "Unknown error"))
             }
         }
     }

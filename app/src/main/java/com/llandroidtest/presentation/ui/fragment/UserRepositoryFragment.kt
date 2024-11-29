@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.llandroidtest.R
 import com.llandroidtest.presentation.adapter.UserRepositoryAdapter
@@ -36,12 +37,24 @@ class UserRepositoryFragment : Fragment() {
         setupRecyclerView()
         observeViewModel()
 
-        sharedViewModel.getRepositories(query = "language:kotlin", page = 1)
+        if (savedInstanceState == null) {
+            sharedViewModel.getRepositories(query = "language:java", page = 1)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        sharedViewModel.getRepositories(query = "language:java", page = 1)
     }
 
     private fun setupRecyclerView() {
         adapter = UserRepositoryAdapter(emptyList()) { repository ->
-            Toast.makeText(requireContext(), "Selecionado: ${repository.name}", Toast.LENGTH_SHORT).show()
+            val action = UserRepositoryFragmentDirections
+                .actionUserRepositoryToPullRequests(
+                    owner = repository.owner.login,
+                    repo = repository.name
+                )
+            findNavController().navigate(action)
         }
         binding.recyclerViewUserRepositories.adapter = adapter
         binding.recyclerViewUserRepositories.layoutManager = LinearLayoutManager(requireContext())
@@ -53,7 +66,7 @@ class UserRepositoryFragment : Fragment() {
                 is Resource.Loading -> {
                 }
                 is Resource.Success -> {
-                    val repositories = resource.data?.items ?: emptyList()
+                    val repositories = resource.data.items
                     adapter.updateData(repositories)
                 }
                 is Resource.Error -> {
@@ -62,5 +75,4 @@ class UserRepositoryFragment : Fragment() {
             }
         }
     }
-
 }
