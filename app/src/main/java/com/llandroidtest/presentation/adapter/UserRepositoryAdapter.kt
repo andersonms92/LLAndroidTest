@@ -8,30 +8,32 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.llandroidtest.R
-import com.llandroidtest.domain.model.UserRepositoryModel
+import com.llandroidtest.data.model.Repository
 
 class UserRepositoryAdapter(
-    private val repositories: List<UserRepositoryModel>,
-    private val onItemClick: (UserRepositoryModel) -> Unit
+    private var repositories: List<Repository>,
+    private val onItemClick: (Repository) -> Unit
 ) : RecyclerView.Adapter<UserRepositoryAdapter.RepositoryViewHolder>() {
 
     inner class RepositoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val imgUserPhoto: ImageView = itemView.findViewById(R.id.imgUserPhoto)
-        private val tvUserName: TextView = itemView.findViewById(R.id.tvUserName)
-        private val tvName: TextView = itemView.findViewById(R.id.tvName)
-        private val tvRepositoryName: TextView = itemView.findViewById(R.id.tvRepositoryName)
-        private val tvRepositoryDescription: TextView = itemView.findViewById(R.id.tvRepositoryDescription)
-        private val tvForksCount: TextView = itemView.findViewById(R.id.tvForksCount)
-        private val tvLikesCount: TextView = itemView.findViewById(R.id.tvLikesCount)
+        private val userPhoto: ImageView = itemView.findViewById(R.id.imgUserPhoto)
+        private val userName: TextView = itemView.findViewById(R.id.tvUserName)
+        private val repositoryName: TextView = itemView.findViewById(R.id.tvRepositoryName)
+        private val repositoryDescription: TextView = itemView.findViewById(R.id.tvRepositoryDescription)
+        private val forksCount: TextView = itemView.findViewById(R.id.tvForksCount)
+        private val likesCount: TextView = itemView.findViewById(R.id.tvLikesCount)
 
-        fun bind(repository: UserRepositoryModel) {
-            Glide.with(itemView.context).load(repository.userPhotoUrl).into(imgUserPhoto)
-            tvUserName.text = repository.userName
-            tvName.text = repository.name
-            tvRepositoryName.text = repository.repositoryName
-            tvRepositoryDescription.text = repository.repositoryDescription
-            tvForksCount.text = repository.forksCount.toString()
-            tvLikesCount.text = repository.likesCount.toString()
+        fun bind(repository: Repository) {
+            userName.text = repository.owner.login
+            repositoryName.text = repository.name
+            repositoryDescription.text = repository.description ?: "No description available"
+            forksCount.text = repository.forks_count.toString()
+            likesCount.text = repository.stargazers_count.toString()
+
+            Glide.with(itemView.context)
+                .load(repository.owner.avatar_url)
+                .circleCrop()
+                .into(userPhoto)
 
             itemView.setOnClickListener {
                 onItemClick(repository)
@@ -50,5 +52,9 @@ class UserRepositoryAdapter(
     }
 
     override fun getItemCount(): Int = repositories.size
-}
 
+    fun updateData(newRepositories: List<Repository>) {
+        repositories = newRepositories
+        notifyDataSetChanged()
+    }
+}

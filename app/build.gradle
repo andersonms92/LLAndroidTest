@@ -2,7 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.navigation.safeargs)
+    alias(libs.plugins.hilt.android)
+    id("kotlin-kapt")
 }
+
+//apply plugin: 'kotlin-kapt'
 
 android {
     namespace 'com.llandroidtest'
@@ -38,55 +42,55 @@ android {
     packaging {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
-}
 
-dependencies {
-    implementation libs.fragmentKtx
-    implementation libs.androidx.navigation.ui.ktx
+    hilt {
+        enableAggregatingTask = false
+    }
 
-    implementation libs.androidx.core.ktx
-    implementation libs.androidx.lifecycle.runtime.ktx
-    implementation libs.androidx.constraintlayout
-    implementation libs.androidx.cardview
+    buildFeatures {
+        viewBinding true
+    }
 
-    // Glide
-    implementation libs.glide
+    dependencies {
+        implementation libs.fragmentKtx
+        implementation libs.androidx.navigation.ui.ktx
 
-    // Material Design
-    implementation libs.materialDesign
+        implementation libs.androidx.core.ktx
+        implementation libs.androidx.lifecycle.runtime.ktx
+        implementation libs.androidx.constraintlayout
+        implementation libs.androidx.cardview
 
-    // RecyclerView
-    implementation libs.androidx.recyclerview
+        // Glide
+        implementation libs.glide
 
-    // Retrofit e OkHTTP
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.gson)
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging)
+        // Material Design
+        implementation libs.materialDesign
 
-    // Dagger
-    implementation(libs.dagger)
-    implementation(libs.dagger.android)
-    implementation(libs.dagger.android.support)
-    implementation(libs.dagger.compiler)
-    implementation(libs.dagger.android.processor)
+        // RecyclerView
+        implementation libs.androidx.recyclerview
 
-    // Hilt
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.android.compiler)
-    testImplementation(libs.hilt.android.testing)
-    testImplementation(libs.hilt.android.compiler)
-    androidTestImplementation(libs.hilt.android.testing)
-    androidTestImplementation(libs.hilt.android.compiler)
+        // Retrofit e OkHTTP
+        implementation libs.retrofit
+        implementation libs.retrofit.gson
+        implementation libs.okhttp
 
-    // RxJava
-    implementation(libs.rxjava)
-    implementation(libs.rxandroid)
-    implementation(libs.retrofit.adapter.rxjava3)
+        // RxJava
+        implementation libs.rxjava
+        implementation libs.rxandroid
+        implementation libs.retrofit.adapter.rxjava3
 
-    testImplementation libs.junit
-    androidTestImplementation libs.androidx.junit
-    androidTestImplementation libs.androidx.espresso.core
+        // Hilt
+        implementation libs.hilt.android
+        kapt libs.hilt.compiler
+
+        // Timber
+        implementation libs.timber
+
+        testImplementation libs.junit
+        androidTestImplementation libs.androidx.junit
+        androidTestImplementation libs.androidx.espresso.core
+    }
 }

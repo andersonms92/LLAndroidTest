@@ -7,13 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
-import com.llandroidtest.domain.model.PullRequestModel
+import com.llandroidtest.data.model.PullRequestResponse
 
-class PullRequestsAdapter(private val pullRequestModels: List<PullRequestModel>) : RecyclerView.Adapter<PullRequestsAdapter.PullRequestViewHolder>() {
+class PullRequestsAdapter(private val pullRequests: List<PullRequestResponse>) : RecyclerView.Adapter<PullRequestsAdapter.PullRequestViewHolder>() {
 
-    fun submitList(list: List<PullRequestModel>) {
-        (pullRequestModels as MutableList).clear()
-        pullRequestModels.addAll(list)
+    fun submitList(list: List<PullRequestResponse>) {
+        (pullRequests as MutableList).clear()
+        pullRequests.addAll(list)
         notifyDataSetChanged()
     }
 
@@ -24,11 +24,11 @@ class PullRequestsAdapter(private val pullRequestModels: List<PullRequestModel>)
     }
 
     override fun onBindViewHolder(holder: PullRequestViewHolder, position: Int) {
-        val pullRequest = pullRequestModels[position]
+        val pullRequest = pullRequests[position]
         holder.bind(pullRequest)
     }
 
-    override fun getItemCount(): Int = pullRequestModels.size
+    override fun getItemCount(): Int = pullRequests.size
 
     class PullRequestViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val titleTextView: TextView = itemView.findViewById(R.id.tv_pr_title)
@@ -37,11 +37,11 @@ class PullRequestsAdapter(private val pullRequestModels: List<PullRequestModel>)
         private val fullNameTextView: TextView = itemView.findViewById(R.id.tv_user_name)
         private val avatarImageView: ImageView = itemView.findViewById(R.id.iv_user_avatar)
 
-        fun bind(pullRequestModel: PullRequestModel) {
-            titleTextView.text = pullRequestModel.title
-            bodyTextView.text = pullRequestModel.description
-            usernameTextView.text = pullRequestModel.username
-            fullNameTextView.text = pullRequestModel.fullName
+        fun bind(pullRequest: PullRequestResponse) {
+            titleTextView.text = pullRequest.title
+//            bodyTextView.text = pullRequest.description
+//            usernameTextView.text = pullRequest.username
+//            fullNameTextView.text = pullRequest.fullName
 
             avatarImageView.setImageResource(R.drawable.ic_user)
         }

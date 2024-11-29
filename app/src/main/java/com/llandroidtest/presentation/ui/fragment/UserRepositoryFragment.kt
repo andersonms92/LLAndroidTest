@@ -4,60 +4,63 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
 import com.llandroidtest.presentation.adapter.UserRepositoryAdapter
-import com.llandroidtest.domain.model.UserRepositoryModel
+import com.llandroidtest.databinding.FragmentUserRepositoryBinding
+import com.llandroidtest.presentation.viewmodel.Resource
+import com.llandroidtest.presentation.viewmodel.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class UserRepositoryFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
+    private val binding by lazy { FragmentUserRepositoryBinding.bind(requireView()) }
+    private val sharedViewModel: SharedViewModel by viewModels()
     private lateinit var adapter: UserRepositoryAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_user_repository, container, false)
-        recyclerView = view.findViewById(R.id.recyclerViewUserRepositories)
-
-        return view
+    ): View {
+        return inflater.inflate(R.layout.fragment_user_repository, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val repositories = listOf(
-            UserRepositoryModel(
-                userPhotoUrl = "https://via.placeholder.com/64",
-                userName = "chaoslune",
-                name = "Anderson Matos",
-                repositoryName = "Luiza Labs Android Test",
-                repositoryDescription = "A test repository for Android development.",
-                forksCount = 120,
-                likesCount = 300
-            ),
-            UserRepositoryModel(
-                userPhotoUrl = "https://via.placeholder.com/64",
-                userName = "johndoe",
-                name = "John Doe",
-                repositoryName = "Awesome Kotlin Project",
-                repositoryDescription = "An amazing project built with Kotlin.",
-                forksCount = 75,
-                likesCount = 450
-            )
-        )
+        setupRecyclerView()
+        observeViewModel()
 
-        adapter = UserRepositoryAdapter(repositories) { repository ->
-            val action = UserRepositoryFragmentDirections
-                .actionUserRepositoryToPullRequests(repository.repositoryName)
-            this.view?.let { findNavController(it).navigate(action) }
-        }
-
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = adapter
+        sharedViewModel.getRepositories(query = "language:kotlin", page = 1)
     }
+
+    private fun setupRecyclerView() {
+        adapter = UserRepositoryAdapter(emptyList()) { repository ->
+            Toast.makeText(requireContext(), "Selecionado: ${repository.name}", Toast.LENGTH_SHORT).show()
+        }
+        binding.recyclerViewUserRepositories.adapter = adapter
+        binding.recyclerViewUserRepositories.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun observeViewModel() {
+        sharedViewModel.repositories.observe(viewLifecycleOwner) { resource ->
+            when (resource) {
+                is Resource.Loading -> {
+                }
+                is Resource.Success -> {
+                    val repositories = resource.data?.items ?: emptyList()
+                    adapter.updateData(repositories)
+                }
+                is Resource.Error -> {
+                    Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
 }
