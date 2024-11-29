@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
 import com.llandroidtest.presentation.adapter.PullRequestsAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PullRequestsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
