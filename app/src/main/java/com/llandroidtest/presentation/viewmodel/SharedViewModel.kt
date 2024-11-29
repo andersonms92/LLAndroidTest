@@ -1,65 +1,89 @@
 package com.llandroidtest.presentation.viewmodel
 
-import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.llandroidtest.data.model.PullRequestResponse
-import com.llandroidtest.domain.model.PullRequestResponseItem
-import com.llandroidtest.domain.model.RepositoryResponseData
-import com.llandroidtest.domain.model.RepositoryResponseItem
-import com.llandroidtest.domain.usecase.GithubUseCase
+import com.llandroidtest.data.model.RepositoryResponse
+import com.llandroidtest.domain.repository.GithubRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.schedulers.Schedulers
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import timber.log.Timber
 import javax.inject.Inject
-import com.llandroidtest.presentation.viewmodel.Resource
-
 
 @HiltViewModel
 class SharedViewModel @Inject constructor(
-    private val githubUseCase: GithubUseCase
+    private val githubRepository: GithubRepository
 ) : ViewModel() {
 
-    private val _repositories = MutableLiveData<Resource<RepositoryResponseData>>()
-    val repositories: LiveData<Resource<RepositoryResponseData>> = _repositories
+    private val _repositories = MutableLiveData<Resource<RepositoryResponse>>()
+    val repositories: LiveData<Resource<RepositoryResponse>> = _repositories
 
     private val _pullRequests = MutableLiveData<Resource<List<PullRequestResponse>>>()
     val pullRequests: LiveData<Resource<List<PullRequestResponse>>> = _pullRequests
 
-    @SuppressLint("CheckResult")
-    suspend fun getRepositories(query: String, page: Int) {
-        _repositories.postValue(Resource.Loading())
-        githubUseCase.getRepositories(query, page)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ response ->
+    fun getRepositories(query: String, page: Int) {
+        viewModelScope.launch {
+            _repositories.postValue(Resource.Loading())
+            try {
+                val response = githubRepository.getRepositories(query, page)
                 _repositories.postValue(Resource.Success(response))
-            }, { error ->
-                _repositories.postValue(Resource.Error(error.message ?: "Unknown error"))
-            })
+            } catch (e: Exception) {
+                _repositories.postValue(Resource.Error(e.message ?: "Unknown error"))
+            }
+        }
     }
 
-    @SuppressLint("CheckResult")
-    suspend fun getPullRequests(owner: String, repo: String) {
-        _pullRequests.postValue(Resource.Loading())
-        githubUseCase.getPullRequests(owner, repo)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ response ->
+    fun getPullRequests(owner: String, repo: String) {
+        viewModelScope.launch {
+            _pullRequests.postValue(Resource.Loading())
+            try {
+                val response = githubRepository.getPullRequests(owner, repo)
                 _pullRequests.postValue(Resource.Success(response))
-            }, { error ->
-                _pullRequests.postValue(Resource.Error(error.message ?: "Unknown error"))
-            })
+            } catch (e: Exception) {
+                _pullRequests.postValue(Resource.Error(e.message ?: "Unknown error"))
+            }
+        }
     }
 }
+
+//@HiltViewModel
+//class SharedViewModel @Inject constructor(
+//    private val githubUseCase: GithubUseCase
+//) : ViewModel() {
+//
+//    private val _repositories = MutableLiveData<Resource<RepositoryResponseData>>()
+//    val repositories: LiveData<Resource<RepositoryResponseData>> = _repositories
+//
+//    private val _pullRequests = MutableLiveData<Resource<List<PullRequestResponse>>>()
+//    val pullRequests: LiveData<Resource<List<PullRequestResponse>>> = _pullRequests
+//
+//    @SuppressLint("CheckResult")
+//    suspend fun getRepositories(query: String, page: Int) {
+//        _repositories.postValue(Resource.Loading())
+//        githubUseCase.getRepositories(query, page)
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({ response ->
+//                _repositories.postValue(Resource.Success(response))
+//            }, { error ->
+//                _repositories.postValue(Resource.Error(error.message ?: "Unknown error"))
+//            })
+//    }
+//
+//    @SuppressLint("CheckResult")
+//    suspend fun getPullRequests(owner: String, repo: String) {
+//        _pullRequests.postValue(Resource.Loading())
+//        githubUseCase.getPullRequests(owner, repo)
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({ response ->
+//                _pullRequests.postValue(Resource.Success(response))
+//            }, { error ->
+//                _pullRequests.postValue(Resource.Error(error.message ?: "Unknown error"))
+//            })
+//    }
+//}
 
 
 //@HiltViewModel

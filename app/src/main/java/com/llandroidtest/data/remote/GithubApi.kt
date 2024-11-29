@@ -13,11 +13,26 @@ interface GithubApi {
         @Query("q") query: String,
         @Query("sort") sort: String = "stars",
         @Query("page") page: Int
-    ): Single<RepositoryResponse>
+    ): RepositoryResponse
 
     @GET("repos/{owner}/{repo}/pulls")
     suspend fun getPullRequests(
         @Path("owner") owner: String,
         @Path("repo") repo: String
-    ): Single<List<PullRequestResponse>>
+    ): List<PullRequestResponse>
 }
+
+//interface GithubApi {
+//    @GET("search/repositories")
+//    suspend fun getRepositories(
+//        @Query("q") query: String,
+//        @Query("sort") sort: String = "stars",
+//        @Query("page") page: Int
+//    ): Single<RepositoryResponse>
+//
+//    @GET("repos/{owner}/{repo}/pulls")
+//    suspend fun getPullRequests(
+//        @Path("owner") owner: String,
+//        @Path("repo") repo: String
+//    ): Single<List<PullRequestResponse>>
+//}

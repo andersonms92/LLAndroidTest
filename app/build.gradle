@@ -50,6 +50,10 @@ android {
         enableAggregatingTask = false
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     dependencies {
         implementation libs.fragmentKtx
         implementation libs.androidx.navigation.ui.ktx
