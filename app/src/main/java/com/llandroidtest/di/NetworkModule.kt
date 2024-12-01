@@ -36,22 +36,13 @@ object NetworkModule {
         return OkHttpClient.Builder()
             .cache(cache)
             .addInterceptor { chain ->
-
-                val request = chain.request()
-                var newRequest =  if (isNetworkAvailable(context)) {
+                var request = chain.request()
+                request = if (isNetworkAvailable(context)) {
                     request.newBuilder().header("Cache-Control", "public, max-age=5").build()
                 } else {
                     request.newBuilder().header("Cache-Control", "public, only-if-cached, max-stale=86400").build()
                 }
-
-                val response = chain.proceed(newRequest)
-
-                if (response.cacheResponse != null) {
-                    Log.d("CacheInterceptor", "Response from cache")
-                } else {
-                    Log.d("CacheInterceptor", "Response from network")
-                }
-                response
+                chain.proceed(request)
             }
             .build()
     }
@@ -80,4 +71,5 @@ object NetworkModule {
         val networkCapabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
         return networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
+
 }

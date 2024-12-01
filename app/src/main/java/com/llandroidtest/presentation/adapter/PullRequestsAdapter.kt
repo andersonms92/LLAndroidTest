@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.llandroidtest.R
 import com.llandroidtest.data.model.PullRequestResponse
 
@@ -51,6 +52,8 @@ class PullRequestsAdapter(
             username.text = pullRequest.user.login
             Glide.with(itemView)
                 .load(pullRequest.user.avatarUrl)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .skipMemoryCache(false)
                 .placeholder(R.drawable.ic_user)
                 .into(avatar)
 

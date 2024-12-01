@@ -35,6 +35,7 @@ class UserRepositoryAdapter(
                 .load(repository.owner.avatarUrl)
                 .circleCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .skipMemoryCache(false)
                 .into(userPhoto)
 
             itemView.setOnClickListener {
