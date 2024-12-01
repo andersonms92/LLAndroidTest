@@ -6,13 +6,18 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.llandroidtest.R
 import com.llandroidtest.data.model.PullRequestResponse
 
-class PullRequestsAdapter(private val pullRequests: List<PullRequestResponse>) : RecyclerView.Adapter<PullRequestsAdapter.PullRequestViewHolder>() {
+class PullRequestsAdapter(
+    private val pullRequests: MutableList<PullRequestResponse>,
+    private val onItemClick: (String) -> Unit
+) : RecyclerView.Adapter<PullRequestsAdapter.PullRequestViewHolder>() {
 
     fun submitList(list: List<PullRequestResponse>) {
-        (pullRequests as MutableList).clear()
+        pullRequests.clear()
         pullRequests.addAll(list)
         notifyDataSetChanged()
     }
@@ -26,24 +31,33 @@ class PullRequestsAdapter(private val pullRequests: List<PullRequestResponse>) :
     override fun onBindViewHolder(holder: PullRequestViewHolder, position: Int) {
         val pullRequest = pullRequests[position]
         holder.bind(pullRequest)
+        holder.itemView.setOnClickListener {
+            onItemClick(pullRequest.htmlUrl)
+        }
     }
 
     override fun getItemCount(): Int = pullRequests.size
 
     class PullRequestViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val titleTextView: TextView = itemView.findViewById(R.id.tv_pr_title)
-        private val bodyTextView: TextView = itemView.findViewById(R.id.tv_pr_body)
-        private val usernameTextView: TextView = itemView.findViewById(R.id.tv_user_username)
-        private val fullNameTextView: TextView = itemView.findViewById(R.id.tv_user_name)
-        private val avatarImageView: ImageView = itemView.findViewById(R.id.iv_user_avatar)
+        private val title: TextView = itemView.findViewById(R.id.tv_pr_title)
+        private val body: TextView = itemView.findViewById(R.id.tv_pr_body)
+        private val avatar: ImageView = itemView.findViewById(R.id.iv_user_avatar)
+        private val username: TextView = itemView.findViewById(R.id.tv_user_username)
+        private val createdAt: TextView = itemView.findViewById(R.id.tv_user_name)
 
         fun bind(pullRequest: PullRequestResponse) {
-            titleTextView.text = pullRequest.title
-//            bodyTextView.text = pullRequest.description
-//            usernameTextView.text = pullRequest.username
-//            fullNameTextView.text = pullRequest.fullName
+            title.text = pullRequest.title
+            body.text = pullRequest.body
 
-            avatarImageView.setImageResource(R.drawable.ic_user)
+            username.text = pullRequest.user.login
+            Glide.with(itemView)
+                .load(pullRequest.user.avatarUrl)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .skipMemoryCache(false)
+                .placeholder(R.drawable.ic_user)
+                .into(avatar)
+
+            createdAt.text = pullRequest.createdAt ?: "Unknown date"
         }
     }
 }

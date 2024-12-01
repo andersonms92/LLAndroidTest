@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
 import com.llandroidtest.presentation.adapter.UserRepositoryAdapter
 import com.llandroidtest.databinding.FragmentUserRepositoryBinding
@@ -36,15 +38,44 @@ class UserRepositoryFragment : Fragment() {
         setupRecyclerView()
         observeViewModel()
 
-        sharedViewModel.getRepositories(query = "language:kotlin", page = 1)
+        if (savedInstanceState == null) {
+            sharedViewModel.getRepositories(query = "language:java", page = 1)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        sharedViewModel.getRepositories(query = "language:java", page = 1)
     }
 
     private fun setupRecyclerView() {
         adapter = UserRepositoryAdapter(emptyList()) { repository ->
-            Toast.makeText(requireContext(), "Selecionado: ${repository.name}", Toast.LENGTH_SHORT).show()
+            val action = UserRepositoryFragmentDirections
+                .actionUserRepositoryToPullRequests(
+                    owner = repository.owner.login,
+                    repo = repository.name
+                )
+            findNavController().navigate(action)
         }
         binding.recyclerViewUserRepositories.adapter = adapter
-        binding.recyclerViewUserRepositories.layoutManager = LinearLayoutManager(requireContext())
+        val layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewUserRepositories.layoutManager = layoutManager
+
+        binding.recyclerViewUserRepositories.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                if (dy > 0) {
+                    val visibleItemCount = layoutManager.childCount
+                    val totalItemCount = layoutManager.itemCount
+                    val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+
+                    if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount - 5) {
+                        sharedViewModel.getRepositories(query = "language:java")
+                    }
+                }
+            }
+        })
     }
 
     private fun observeViewModel() {
@@ -53,7 +84,7 @@ class UserRepositoryFragment : Fragment() {
                 is Resource.Loading -> {
                 }
                 is Resource.Success -> {
-                    val repositories = resource.data?.items ?: emptyList()
+                    val repositories = resource.data
                     adapter.updateData(repositories)
                 }
                 is Resource.Error -> {
@@ -62,5 +93,4 @@ class UserRepositoryFragment : Fragment() {
             }
         }
     }
-
 }

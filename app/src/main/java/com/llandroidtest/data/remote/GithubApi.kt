@@ -20,19 +20,10 @@ interface GithubApi {
         @Path("owner") owner: String,
         @Path("repo") repo: String
     ): List<PullRequestResponse>
-}
 
-//interface GithubApi {
-//    @GET("search/repositories")
-//    suspend fun getRepositories(
-//        @Query("q") query: String,
-//        @Query("sort") sort: String = "stars",
-//        @Query("page") page: Int
-//    ): Single<RepositoryResponse>
-//
-//    @GET("repos/{owner}/{repo}/pulls")
-//    suspend fun getPullRequests(
-//        @Path("owner") owner: String,
-//        @Path("repo") repo: String
-//    ): Single<List<PullRequestResponse>>
-//}
+    @GET("/repos/{owner}/{repo}/pulls?state=closed")
+    suspend fun getPullRequestsClosed(
+        @Path("owner") owner: String,
+        @Path("repo") repo: String
+    ): List<PullRequestResponse>
+}

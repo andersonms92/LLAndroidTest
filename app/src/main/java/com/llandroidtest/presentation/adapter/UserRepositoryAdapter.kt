@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.llandroidtest.R
 import com.llandroidtest.data.model.Repository
 
@@ -27,12 +28,14 @@ class UserRepositoryAdapter(
             userName.text = repository.owner.login
             repositoryName.text = repository.name
             repositoryDescription.text = repository.description ?: "No description available"
-            forksCount.text = repository.forks_count.toString()
-            likesCount.text = repository.stargazers_count.toString()
+            forksCount.text = repository.forksCount.toString()
+            likesCount.text = repository.stargazersCount.toString()
 
             Glide.with(itemView.context)
-                .load(repository.owner.avatar_url)
+                .load(repository.owner.avatarUrl)
                 .circleCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .skipMemoryCache(false)
                 .into(userPhoto)
 
             itemView.setOnClickListener {

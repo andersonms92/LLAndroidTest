@@ -8,6 +8,7 @@ import javax.inject.Inject
 interface GithubRepository {
     suspend fun getRepositories(query: String, page: Int): RepositoryResponse
     suspend fun getPullRequests(owner: String, repo: String): List<PullRequestResponse>
+    suspend fun getPullRequestsClosed(owner: String, repo: String): List<PullRequestResponse>
 }
 
 class GithubRepositoryImpl @Inject constructor(
@@ -20,5 +21,9 @@ class GithubRepositoryImpl @Inject constructor(
 
     override suspend fun getPullRequests(owner: String, repo: String): List<PullRequestResponse> {
         return githubApi.getPullRequests(owner, repo)
+    }
+
+    override suspend fun getPullRequestsClosed(owner: String, repo: String): List<PullRequestResponse> {
+        return githubApi.getPullRequestsClosed(owner, repo)
     }
 }

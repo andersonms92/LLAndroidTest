@@ -7,29 +7,28 @@
         android:id="@+id/fragmentUserRepository"
         android:name="com.llandroidtest.presentation.ui.fragment.UserRepositoryFragment"
         android:label="User Repositories">
-
         <action
             android:id="@+id/action_userRepository_to_pullRequests"
             app:destination="@id/fragmentPullRequests">
-
             <argument
-                android:name="repositoryName"
+                android:name="owner"
+                app:argType="string" />
+            <argument
+                android:name="repo"
                 app:argType="string" />
         </action>
     </fragment>
 
-   <fragment
+    <fragment
         android:id="@+id/fragmentPullRequests"
         android:name="com.llandroidtest.presentation.ui.fragment.PullRequestsFragment"
         android:label="Pull Requests">
-
         <argument
-            android:name="repositoryName"
+            android:name="owner"
             app:argType="string" />
-
-         <action
-            android:id="@+id/action_pullRequests_to_userRepository"
-            app:destination="@id/fragmentUserRepository" />
+        <argument
+            android:name="repo"
+            app:argType="string" />
     </fragment>
 
 </navigation>

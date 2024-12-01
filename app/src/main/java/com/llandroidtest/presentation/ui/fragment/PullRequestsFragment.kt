@@ -1,36 +1,86 @@
 package com.llandroidtest.presentation.ui.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
+import com.llandroidtest.databinding.FragmentPullRequestsBinding
 import com.llandroidtest.presentation.adapter.PullRequestsAdapter
+import com.llandroidtest.presentation.viewmodel.Resource
+import com.llandroidtest.presentation.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class PullRequestsFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
+    private val binding by lazy { FragmentPullRequestsBinding.bind(requireView()) }
+    private val sharedViewModel: SharedViewModel by viewModels()
     private lateinit var adapter: PullRequestsAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_pull_requests, container, false)
-
-        recyclerView = view.findViewById(R.id.rv_pull_requests)
-        return view
+    ): View {
+        return inflater.inflate(R.layout.fragment_pull_requests, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        adapter = PullRequestsAdapter(pullRequests)
-//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-//        recyclerView.adapter = adapter
+        setupRecyclerView()
+        observeViewModel()
+
+        val args = PullRequestsFragmentArgs.fromBundle(requireArguments())
+        sharedViewModel.getPullRequests(owner = args.owner, repo = args.repo)
+        sharedViewModel.getPullRequestsClosed(owner = args.owner, repo = args.repo)
+
+    }
+
+    private fun setupRecyclerView() {
+        adapter = PullRequestsAdapter(mutableListOf()) { url ->
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(browserIntent)
+        }
+        binding.rvPullRequests.adapter = adapter
+        binding.rvPullRequests.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun observeViewModel() {
+        sharedViewModel.pullRequests.observe(viewLifecycleOwner) { resource ->
+            when (resource) {
+                is Resource.Loading -> {
+                }
+                is Resource.Success -> {
+                    val pullRequests = resource.data
+                    adapter.submitList(pullRequests)
+                    "${pullRequests.size} opened".also { binding.tvOpenedCount.text = it }
+                 }
+                is Resource.Error -> {
+                    Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        sharedViewModel.pullRequestsClosed.observe(viewLifecycleOwner) { resource ->
+            when (resource) {
+                is Resource.Loading -> {
+                }
+                is Resource.Success -> {
+                    val pullRequests = resource.data.size
+                    "/ $pullRequests closed".also { binding.tvClosedCount.text = it }
+                }
+                is Resource.Error -> {
+                    Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }

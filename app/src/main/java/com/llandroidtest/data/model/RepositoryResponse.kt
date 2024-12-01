@@ -1,8 +1,12 @@
 package com.llandroidtest.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class RepositoryResponse(
-    val total_count: Int,
-    val incomplete_results: Boolean,
+    @SerializedName("total_count")
+    val totalCount: Int,
+    @SerializedName("incomplete_results")
+    val incompleteResults: Boolean,
     val items: List<Repository>
 )
 
@@ -11,11 +15,14 @@ data class Repository(
     val name: String,
     val description: String?,
     val owner: Owner,
-    val stargazers_count: Int,
-    val forks_count: Int
+    @SerializedName("stargazers_count")
+    val stargazersCount: Int,
+    @SerializedName("forks_count")
+    val forksCount: Int
 )
 
 data class Owner(
     val login: String,
-    val avatar_url: String
+    @SerializedName("avatar_url")
+    val avatarUrl: String
 )
