@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.llandroidtest.data.model.PullRequestResponse
+import com.llandroidtest.data.model.Repository
 import com.llandroidtest.data.model.RepositoryResponse
 import com.llandroidtest.domain.repository.GithubRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,8 +17,8 @@ class SharedViewModel @Inject constructor(
     private val githubRepository: GithubRepository
 ) : ViewModel() {
 
-    private val _repositories = MutableLiveData<Resource<RepositoryResponse>>()
-    val repositories: LiveData<Resource<RepositoryResponse>> = _repositories
+    private val _repositories = MutableLiveData<Resource<List<Repository>>>()
+    val repositories: LiveData<Resource<List<Repository>>> = _repositories
 
     private val _pullRequests = MutableLiveData<Resource<List<PullRequestResponse>>>()
     val pullRequests: LiveData<Resource<List<PullRequestResponse>>> = _pullRequests
@@ -25,16 +26,35 @@ class SharedViewModel @Inject constructor(
     private val _pullRequestsClosed = MutableLiveData<Resource<List<PullRequestResponse>>>()
     val pullRequestsClosed: LiveData<Resource<List<PullRequestResponse>>> = _pullRequestsClosed
 
-    fun getRepositories(query: String, page: Int) {
+    private var currentPage = 1
+    private var isLoading = false
+    private var allRepositories = mutableListOf<Repository>()
+
+    fun getRepositories(query: String, page: Int = currentPage) {
+        if (isLoading) return
+        isLoading = true
+
         viewModelScope.launch {
             _repositories.postValue(Resource.Loading())
             try {
                 val response = githubRepository.getRepositories(query, page)
-                _repositories.postValue(Resource.Success(response))
+                if (page == 1) {
+                    allRepositories.clear()
+                }
+                allRepositories.addAll(response.items)
+                _repositories.postValue(Resource.Success(allRepositories))
+                currentPage++
             } catch (e: Exception) {
                 _repositories.postValue(Resource.Error(e.message ?: "Unknown error"))
+            } finally {
+                isLoading = false
             }
         }
+    }
+
+    fun resetPagination() {
+        currentPage = 1
+        allRepositories.clear()
     }
 
     fun getPullRequests(owner: String, repo: String) {
