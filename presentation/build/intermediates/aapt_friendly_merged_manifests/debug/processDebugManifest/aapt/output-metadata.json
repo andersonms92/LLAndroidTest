@@ -4,7 +4,7 @@
     "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.llandroidtest.presentation",
+  "applicationId": "com.presentation",
   "variantName": "debug",
   "elements": [
     {

@@ -12,7 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.llandroidtest.R
-import com.llandroidtest.presentation.ui.activity.MainActivity
+import com.presentation.ui.activity.MainActivity
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -28,14 +28,14 @@ class UserRepositoryFragmentTest {
 
     @Test
     fun testRecyclerViewIsVisibleAndScrollable() {
-        onView(withId(R.id.nav_host_fragment)).perform(ViewActions.click())
+        onView(withId(com.presentation.R.id.nav_host_fragment)).perform(ViewActions.click())
 
-        onView(withId(R.id.recyclerViewUserRepositories)).check(matches(isDisplayed()))
+        onView(withId(com.presentation.R.id.recyclerViewUserRepositories)).check(matches(isDisplayed()))
 
-        onView(withId(R.id.recyclerViewUserRepositories)).perform(
+        onView(withId(com.presentation.R.id.recyclerViewUserRepositories)).perform(
             RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(0)
         )
 
-        onView(withId(R.id.recyclerViewUserRepositories)).check(matches(hasMinimumChildCount(0)))
+        onView(withId(com.presentation.R.id.recyclerViewUserRepositories)).check(matches(hasMinimumChildCount(0)))
     }
 }

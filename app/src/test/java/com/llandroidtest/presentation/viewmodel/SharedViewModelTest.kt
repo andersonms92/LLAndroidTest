@@ -1,18 +1,14 @@
 package com.llandroidtest.presentation.viewmodel
 
-import com.llandroidtest.data.model.Repository
+import com.data.model.Repository
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import androidx.lifecycle.Observer
-import androidx.lifecycle.SavedStateHandle
-import com.llandroidtest.data.model.PullRequestResponse
+import com.data.model.PullRequestResponse
 import com.llandroidtest.utils.MainCoroutineRule
-import com.llandroidtest.data.model.RepositoryResponse
-import com.llandroidtest.domain.repository.GithubRepository
-import com.llandroidtest.domain.usecase.GetClosedPullRequestsUseCase
-import com.llandroidtest.domain.usecase.GetPullRequestsUseCase
-import com.llandroidtest.domain.usecase.GetRepositoriesUseCase
+import com.data.model.RepositoryResponse
+import com.domain.usecase.Resource
 import com.llandroidtest.utils.MocksRepository
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -30,14 +26,14 @@ class SharedViewModelTest {
     @get:Rule
     val coroutineRule = MainCoroutineRule()
 
-    private lateinit var viewModel: SharedViewModel
-    private val getClosedPullRequestsUseCase: GetClosedPullRequestsUseCase = mockk()
-    private val getPullRequestsUseCase: GetPullRequestsUseCase = mockk()
-    private val getRepositoriesUseCase: GetRepositoriesUseCase = mockk()
+    private lateinit var viewModel: com.presentation.viewmodel.SharedViewModel
+    private val getClosedPullRequestsUseCase: com.domain.usecase.GetClosedPullRequestsUseCase = mockk()
+    private val getPullRequestsUseCase: com.domain.usecase.GetPullRequestsUseCase = mockk()
+    private val getRepositoriesUseCase: com.domain.usecase.GetRepositoriesUseCase = mockk()
 
     @Before
     fun setUp() {
-        viewModel = SharedViewModel(
+        viewModel = com.presentation.viewmodel.SharedViewModel(
             getClosedPullRequestsUseCase = getClosedPullRequestsUseCase,
             getPullRequestsUseCase = getPullRequestsUseCase,
             getRepositoriesUseCase = getRepositoriesUseCase
@@ -52,7 +48,12 @@ class SharedViewModelTest {
         val repositories =
             MocksRepository.mockRepositories
 
-        val response = Resource.Success(RepositoryResponse(2, items = repositories, incompleteResults = false))
+        val response = Resource.Success()
+//            RepositoryResponse(
+//                2,
+//                items = repositories,
+//                incompleteResults = false
+//        )
 
         coEvery { getRepositoriesUseCase(query, page) } returns response
 

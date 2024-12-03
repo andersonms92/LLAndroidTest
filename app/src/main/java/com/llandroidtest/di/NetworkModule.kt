@@ -3,9 +3,7 @@ package com.llandroidtest.di
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.util.Log
-import com.llandroidtest.data.remote.GithubApi
-import com.llandroidtest.data.utils.Constants.Companion.BASE_URL
+import com.data.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -60,8 +58,8 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApi(retrofit: Retrofit) : GithubApi {
-        return retrofit.create(GithubApi::class.java)
+    fun provideApi(retrofit: Retrofit) : com.data.remote.GithubApi {
+        return retrofit.create(com.data.remote.GithubApi::class.java)
     }
 
     private fun isNetworkAvailable(context: Context): Boolean {

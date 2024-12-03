@@ -1,9 +1,9 @@
 package com.llandroidtest.presentation.utils
 
-import com.llandroidtest.data.model.Repository
-import com.llandroidtest.data.model.Owner
-import com.llandroidtest.data.model.PullRequestResponse
-import com.llandroidtest.data.model.User
+import com.data.model.Repository
+import com.data.model.Owner
+import com.data.model.PullRequestResponse
+import com.data.model.User
 
 object MocksRepository {
 

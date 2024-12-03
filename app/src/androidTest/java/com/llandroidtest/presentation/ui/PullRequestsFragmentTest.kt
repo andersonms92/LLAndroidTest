@@ -16,7 +16,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Test
 import org.junit.runner.RunWith
 import com.llandroidtest.R
-import com.llandroidtest.presentation.ui.fragment.PullRequestsFragment
+import com.presentation.ui.fragment.PullRequestsFragment
 import com.llandroidtest.presentation.utils.MocksRepository
 
 @RunWith(AndroidJUnit4::class)
@@ -26,7 +26,7 @@ class PullRequestsFragmentTest {
     fun testPullRequestsAreDisplayed() {
         val mockPullRequests = MocksRepository.mockPullRequests
 
-        val scenario = launchFragmentInContainer<PullRequestsFragment>(
+        val scenario = launchFragmentInContainer<com.presentation.ui.fragment.PullRequestsFragment>(
             themeResId = R.style.Theme_LLAndroidTest
         )
 
@@ -34,9 +34,9 @@ class PullRequestsFragmentTest {
             fragment.adapter.submitList(mockPullRequests)
         }
 
-        onView(withId(R.id.rv_pull_requests)).check(matches(isDisplayed()))
+        onView(withId(com.presentation.R.id.rv_pull_requests)).check(matches(isDisplayed()))
 
-        onView(withId(R.id.rv_pull_requests))
+        onView(withId(com.presentation.R.id.rv_pull_requests))
             .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(1))
         onView(withText("Test PR 1")).check(matches(isDisplayed()))
         onView(withText("Test PR 2")).check(matches(isDisplayed()))
@@ -46,7 +46,7 @@ class PullRequestsFragmentTest {
     fun testPullRequestClickOpensBrowser() {
         val mockPullRequest = MocksRepository.mockPullRequest1
 
-        val scenario = launchFragmentInContainer<PullRequestsFragment>(
+        val scenario = launchFragmentInContainer<com.presentation.ui.fragment.PullRequestsFragment>(
             themeResId = R.style.Theme_LLAndroidTest
         )
 
