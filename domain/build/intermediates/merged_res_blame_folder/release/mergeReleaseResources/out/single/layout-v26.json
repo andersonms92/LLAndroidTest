@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.llandroidtest.domain-release-32:/layout-v26/abc_screen_toolbar.xml",
+        "source": "com.llandroidtest.domain-appcompat-1.6.1-24:/layout-v26/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "com.llandroidtest.domain-release-32:/layout-v26/mtrl_calendar_month.xml",
+        "source": "com.llandroidtest.domain-material-1.9.0-23:/layout-v26/mtrl_calendar_month.xml"
+    }
+]

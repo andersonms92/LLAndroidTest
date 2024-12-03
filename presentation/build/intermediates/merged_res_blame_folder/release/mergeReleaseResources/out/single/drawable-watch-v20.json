@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.llandroidtest.presentation-release-51:/drawable-watch-v20/abc_dialog_material_background.xml",
+        "source": "com.llandroidtest.presentation-appcompat-1.6.1-42:/drawable-watch-v20/abc_dialog_material_background.xml"
+    }
+]

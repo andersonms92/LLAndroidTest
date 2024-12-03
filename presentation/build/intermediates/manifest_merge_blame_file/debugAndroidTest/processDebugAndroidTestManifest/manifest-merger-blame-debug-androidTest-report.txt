@@ -1,0 +1,195 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.llandroidtest.presentation.test" >
+4
+5    <uses-sdk
+5-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:5:5-74
+6        android:minSdkVersion="29"
+6-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:5:15-41
+7        android:targetSdkVersion="29" />
+7-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:5:42-71
+8
+9    <instrumentation
+9-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:11:5-15:85
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:11:22-76
+11        android:functionalTest="false"
+11-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:14:22-52
+12        android:handleProfiling="false"
+12-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:13:22-53
+13        android:label="Tests for com.llandroidtest.presentation.test"
+13-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:15:22-83
+14        android:targetPackage="com.llandroidtest.presentation.test" />
+14-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:12:22-81
+15
+16    <queries>
+16-->[androidx.test:runner:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\b51de07ad3bea45fdc1a83948f250bdc\transformed\runner-1.6.1\AndroidManifest.xml:24:5-28:15
+17        <package android:name="androidx.test.orchestrator" />
+17-->[androidx.test:runner:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\b51de07ad3bea45fdc1a83948f250bdc\transformed\runner-1.6.1\AndroidManifest.xml:25:9-62
+17-->[androidx.test:runner:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\b51de07ad3bea45fdc1a83948f250bdc\transformed\runner-1.6.1\AndroidManifest.xml:25:18-59
+18        <package android:name="androidx.test.services" />
+18-->[androidx.test:runner:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\b51de07ad3bea45fdc1a83948f250bdc\transformed\runner-1.6.1\AndroidManifest.xml:26:9-58
+18-->[androidx.test:runner:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\b51de07ad3bea45fdc1a83948f250bdc\transformed\runner-1.6.1\AndroidManifest.xml:26:18-55
+19        <package android:name="com.google.android.apps.common.testing.services" />
+19-->[androidx.test:runner:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\b51de07ad3bea45fdc1a83948f250bdc\transformed\runner-1.6.1\AndroidManifest.xml:27:9-83
+19-->[androidx.test:runner:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\b51de07ad3bea45fdc1a83948f250bdc\transformed\runner-1.6.1\AndroidManifest.xml:27:18-80
+20    </queries>
+21
+22    <uses-permission android:name="android.permission.REORDER_TASKS" />
+22-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:24:5-72
+22-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:24:22-69
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->[:data] C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\data\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-79
+23-->[:data] C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\data\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:22-76
+24
+25    <permission
+25-->[androidx.core:core:1.15.0] C:\Users\Chaos\.gradle\caches\transforms-4\067ef80f13b95db0dabffb5dd1ef0ada\transformed\core-1.15.0\AndroidManifest.xml:22:5-24:47
+26        android:name="com.llandroidtest.presentation.test.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+26-->[androidx.core:core:1.15.0] C:\Users\Chaos\.gradle\caches\transforms-4\067ef80f13b95db0dabffb5dd1ef0ada\transformed\core-1.15.0\AndroidManifest.xml:23:9-81
+27        android:protectionLevel="signature" />
+27-->[androidx.core:core:1.15.0] C:\Users\Chaos\.gradle\caches\transforms-4\067ef80f13b95db0dabffb5dd1ef0ada\transformed\core-1.15.0\AndroidManifest.xml:24:9-44
+28
+29    <uses-permission android:name="com.llandroidtest.presentation.test.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+29-->[androidx.core:core:1.15.0] C:\Users\Chaos\.gradle\caches\transforms-4\067ef80f13b95db0dabffb5dd1ef0ada\transformed\core-1.15.0\AndroidManifest.xml:26:5-97
+29-->[androidx.core:core:1.15.0] C:\Users\Chaos\.gradle\caches\transforms-4\067ef80f13b95db0dabffb5dd1ef0ada\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
+30
+31    <application
+31-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:7:5-9:19
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.15.0] C:\Users\Chaos\.gradle\caches\transforms-4\067ef80f13b95db0dabffb5dd1ef0ada\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
+33        android:debuggable="true"
+34        android:extractNativeLibs="false" >
+35        <uses-library android:name="android.test.runner" />
+35-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:8:9-60
+35-->C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10750773631706488293.xml:8:23-57
+36
+37        <activity
+37-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:27:9-34:20
+38            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+38-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:28:13-99
+39            android:exported="true"
+39-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:29:13-36
+40            android:theme="@style/WhiteBackgroundTheme" >
+40-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:30:13-56
+41            <intent-filter android:priority="-100" >
+41-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:31:13-33:29
+41-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:31:28-51
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:32:17-77
+42-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:32:27-74
+43            </intent-filter>
+44        </activity>
+45        <activity
+45-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:35:9-42:20
+46            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+46-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:36:13-95
+47            android:exported="true"
+47-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:37:13-36
+48            android:theme="@style/WhiteBackgroundTheme" >
+48-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:38:13-56
+49            <intent-filter android:priority="-100" >
+49-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:31:13-33:29
+49-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:31:28-51
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:32:17-77
+50-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:32:27-74
+51            </intent-filter>
+52        </activity>
+53        <activity
+53-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:43:9-50:20
+54            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+54-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:44:13-103
+55            android:exported="true"
+55-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:45:13-36
+56            android:theme="@style/WhiteBackgroundDialogTheme" >
+56-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:46:13-62
+57            <intent-filter android:priority="-100" >
+57-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:31:13-33:29
+57-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:31:28-51
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:32:17-77
+58-->[androidx.test:core:1.6.1] C:\Users\Chaos\.gradle\caches\transforms-4\2dd9cb9b97e0e122c9e57ccf32dc61c5\transformed\core-1.6.1\AndroidManifest.xml:32:27-74
+59            </intent-filter>
+60        </activity>
+61
+62        <provider
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Chaos\.gradle\caches\transforms-4\80dbb74352f3acaa72cd51924b8ca799\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+63            android:name="androidx.startup.InitializationProvider"
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Chaos\.gradle\caches\transforms-4\80dbb74352f3acaa72cd51924b8ca799\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+64            android:authorities="com.llandroidtest.presentation.test.androidx-startup"
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Chaos\.gradle\caches\transforms-4\80dbb74352f3acaa72cd51924b8ca799\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+65            android:exported="false" >
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Chaos\.gradle\caches\transforms-4\80dbb74352f3acaa72cd51924b8ca799\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+66            <meta-data
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Chaos\.gradle\caches\transforms-4\80dbb74352f3acaa72cd51924b8ca799\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+67                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+67-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Chaos\.gradle\caches\transforms-4\80dbb74352f3acaa72cd51924b8ca799\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+68                android:value="androidx.startup" />
+68-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Chaos\.gradle\caches\transforms-4\80dbb74352f3acaa72cd51924b8ca799\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+69            <meta-data
+69-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Chaos\.gradle\caches\transforms-4\3d7eeaed16656a508cc0aca577ec7058\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+70                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+70-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Chaos\.gradle\caches\transforms-4\3d7eeaed16656a508cc0aca577ec7058\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+71                android:value="androidx.startup" />
+71-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\Chaos\.gradle\caches\transforms-4\3d7eeaed16656a508cc0aca577ec7058\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+72            <meta-data
+72-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+73                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+73-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+74                android:value="androidx.startup" />
+74-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+75        </provider>
+76
+77        <uses-library
+77-->[androidx.window:window:1.0.0] C:\Users\Chaos\.gradle\caches\transforms-4\844aec579575b7b24be06e01dc33e798\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+78            android:name="androidx.window.extensions"
+78-->[androidx.window:window:1.0.0] C:\Users\Chaos\.gradle\caches\transforms-4\844aec579575b7b24be06e01dc33e798\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+79            android:required="false" />
+79-->[androidx.window:window:1.0.0] C:\Users\Chaos\.gradle\caches\transforms-4\844aec579575b7b24be06e01dc33e798\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+80        <uses-library
+80-->[androidx.window:window:1.0.0] C:\Users\Chaos\.gradle\caches\transforms-4\844aec579575b7b24be06e01dc33e798\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+81            android:name="androidx.window.sidecar"
+81-->[androidx.window:window:1.0.0] C:\Users\Chaos\.gradle\caches\transforms-4\844aec579575b7b24be06e01dc33e798\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+82            android:required="false" />
+82-->[androidx.window:window:1.0.0] C:\Users\Chaos\.gradle\caches\transforms-4\844aec579575b7b24be06e01dc33e798\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+83
+84        <receiver
+84-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+85            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+85-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+86            android:directBootAware="false"
+86-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+87            android:enabled="true"
+87-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+88            android:exported="true"
+88-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+89            android:permission="android.permission.DUMP" >
+89-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+91                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+92            </intent-filter>
+93            <intent-filter>
+93-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+94                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+94-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+95            </intent-filter>
+96            <intent-filter>
+96-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+97                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+97-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+98            </intent-filter>
+99            <intent-filter>
+99-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+100                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+100-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\Chaos\.gradle\caches\transforms-4\e31ee0ca83f4c639603f20cc80341897\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+101            </intent-filter>
+102        </receiver>
+103    </application>
+104
+105</manifest>

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.llandroidtest.presentation-release-51:/font/roboto.ttf",
+        "source": "com.llandroidtest.presentation-main-52:/font/roboto.ttf"
+    },
+    {
+        "merged": "com.llandroidtest.presentation-release-51:/font/roboto_medium.ttf",
+        "source": "com.llandroidtest.presentation-main-52:/font/roboto_medium.ttf"
+    }
+]

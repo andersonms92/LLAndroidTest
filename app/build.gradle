@@ -1,0 +1,117 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.navigation.safeargs)
+    alias(libs.plugins.hilt.android)
+    id("kotlin-kapt")
+}
+
+//apply plugin: 'kotlin-kapt'
+
+android {
+    namespace 'com.llandroidtest'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.llandroidtest"
+        minSdk 29
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.toVersion(libs.versions.java.get())
+        targetCompatibility JavaVersion.toVersion(libs.versions.java.get())
+    }
+    kotlinOptions {
+        jvmTarget = libs.versions.java.get()
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
+
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += "META-INF/gradle/incremental.annotation.processors"
+        }
+    }
+
+    hilt {
+        enableAggregatingTask = false
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    testOptions {
+        unitTests {
+            animationsDisabled = true
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+
+    dependencies {
+        implementation libs.fragmentKtx
+        implementation libs.androidx.navigation.ui.ktx
+
+        implementation libs.androidx.core.ktx
+        implementation libs.androidx.lifecycle.runtime.ktx
+        implementation libs.androidx.constraintlayout
+        implementation libs.androidx.cardview
+
+        // Glide
+        implementation libs.glide
+
+        // Material Design
+        implementation libs.materialDesign
+
+        // RecyclerView
+        implementation libs.androidx.recyclerview
+
+        // Retrofit e OkHTTP
+        implementation libs.retrofit
+        implementation libs.retrofit.gson
+        implementation libs.okhttp
+
+        // RxJava
+        implementation libs.rxjava
+        implementation libs.rxandroid
+        implementation libs.retrofit.adapter.rxjava3
+
+        // Hilt
+        implementation libs.hilt.android
+        kapt libs.hilt.compiler
+
+        // Timber
+        implementation libs.timber
+
+        // Testes
+        testImplementation(libs.bundles.test)
+
+
+            // Coroutines Reactive para permitir a interoperabilidade com RxJava
+            implementation libs.kotlinx.coroutines.reactive
+            implementation libs.rxjava
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-rx3:1.7.3"
+
+
+
+    }
+}
