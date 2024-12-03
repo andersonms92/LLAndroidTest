@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:maxLines="2"
             tools:text="Body do pull request lorem ipsum dolor sit amet lorem ipsum dolor..."
             android:textColor="@android:color/black"
             android:textSize="14sp" />

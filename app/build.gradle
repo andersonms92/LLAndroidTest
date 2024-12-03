@@ -1,11 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.navigation.safeargs)
+    alias(libs.plugins.hilt.android)
+    id("kotlin-kapt")
 }
+
+//apply plugin: 'kotlin-kapt'
 
 android {
     namespace 'com.llandroidtest'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.llandroidtest"
@@ -33,33 +38,59 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.5.1'
-    }
+
     packaging {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
-}
 
-dependencies {
+    hilt {
+        enableAggregatingTask = false
+    }
 
-    implementation libs.androidx.core.ktx
-    implementation libs.androidx.lifecycle.runtime.ktx
-    implementation libs.androidx.constraintlayout
-    implementation libs.androidx.cardview
+    buildFeatures {
+        viewBinding true
+    }
 
-    implementation libs.glide
-    implementation libs.glideCompiler
+    dependencies {
+        implementation libs.fragmentKtx
+        implementation libs.androidx.navigation.ui.ktx
 
-    implementation libs.materialDesign
-    implementation libs.androidx.recyclerview
+        implementation libs.androidx.core.ktx
+        implementation libs.androidx.lifecycle.runtime.ktx
+        implementation libs.androidx.constraintlayout
+        implementation libs.androidx.cardview
 
-    testImplementation libs.junit
-    androidTestImplementation libs.androidx.junit
-    androidTestImplementation libs.androidx.espresso.core
+        // Glide
+        implementation libs.glide
+
+        // Material Design
+        implementation libs.materialDesign
+
+        // RecyclerView
+        implementation libs.androidx.recyclerview
+
+        // Retrofit e OkHTTP
+        implementation libs.retrofit
+        implementation libs.retrofit.gson
+        implementation libs.okhttp
+
+        // RxJava
+        implementation libs.rxjava
+        implementation libs.rxandroid
+        implementation libs.retrofit.adapter.rxjava3
+
+        // Hilt
+        implementation libs.hilt.android
+        kapt libs.hilt.compiler
+
+        // Timber
+        implementation libs.timber
+
+        testImplementation libs.junit
+        androidTestImplementation libs.androidx.junit
+        androidTestImplementation libs.androidx.espresso.core
+    }
 }
