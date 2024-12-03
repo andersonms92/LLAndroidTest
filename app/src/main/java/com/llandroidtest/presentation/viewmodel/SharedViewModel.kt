@@ -13,6 +13,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+private const val s = "em conexão com a internet."
+
 @HiltViewModel
 class SharedViewModel @Inject constructor(
     private val getRepositoriesUseCase: GetRepositoriesUseCase,
