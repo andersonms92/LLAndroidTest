@@ -1,18 +1,13 @@
 package com.llandroidtest.presentation.viewmodel
 
-import com.llandroidtest.data.model.Repository
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import androidx.lifecycle.Observer
-import androidx.lifecycle.SavedStateHandle
-import com.llandroidtest.data.model.PullRequestResponse
 import com.llandroidtest.utils.MainCoroutineRule
-import com.llandroidtest.data.model.RepositoryResponse
-import com.llandroidtest.domain.repository.GithubRepository
-import com.llandroidtest.domain.usecase.GetClosedPullRequestsUseCase
-import com.llandroidtest.domain.usecase.GetPullRequestsUseCase
-import com.llandroidtest.domain.usecase.GetRepositoriesUseCase
+import com.data.model.mapper.toDomain
+import com.domain.model.PullRequest
+import com.domain.usecase.Resource
 import com.llandroidtest.utils.MocksRepository
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -30,14 +25,14 @@ class SharedViewModelTest {
     @get:Rule
     val coroutineRule = MainCoroutineRule()
 
-    private lateinit var viewModel: SharedViewModel
-    private val getClosedPullRequestsUseCase: GetClosedPullRequestsUseCase = mockk()
-    private val getPullRequestsUseCase: GetPullRequestsUseCase = mockk()
-    private val getRepositoriesUseCase: GetRepositoriesUseCase = mockk()
+    private lateinit var viewModel: com.presentation.viewmodel.SharedViewModel
+    private val getClosedPullRequestsUseCase: com.domain.usecase.GetClosedPullRequestsUseCase = mockk()
+    private val getPullRequestsUseCase: com.domain.usecase.GetPullRequestsUseCase = mockk()
+    private val getRepositoriesUseCase: com.domain.usecase.GetRepositoriesUseCase = mockk()
 
     @Before
     fun setUp() {
-        viewModel = SharedViewModel(
+        viewModel = com.presentation.viewmodel.SharedViewModel(
             getClosedPullRequestsUseCase = getClosedPullRequestsUseCase,
             getPullRequestsUseCase = getPullRequestsUseCase,
             getRepositoriesUseCase = getRepositoriesUseCase
@@ -49,27 +44,40 @@ class SharedViewModelTest {
         // Given
         val query = "language:java"
         val page = 1
-        val repositories =
-            MocksRepository.mockRepositories
+        val repositories = MocksRepository.mockRepositories
+        val dataResponse = com.data.model.RepositoryResponse(
+            totalCount = 2,
+            incompleteResults = false,
+            items = repositories.map {
+                com.data.model.Repository(
+                    id = it.id,
+                    name = it.name,
+                    description = it.description,
+                    owner = com.data.model.Owner(it.owner.login, it.owner.avatarUrl),
+                    stargazersCount = it.stargazersCount,
+                    forksCount = it.forksCount
+                )
+            }
+        )
+        val domainResponse = dataResponse.toDomain()
 
-        val response = Resource.Success(RepositoryResponse(2, items = repositories, incompleteResults = false))
-
-        coEvery { getRepositoriesUseCase(query, page) } returns response
+        coEvery { getRepositoriesUseCase(query, page) } returns Resource.Success(domainResponse)
 
         // When
         viewModel.getRepositories(query, page)
 
         // Then
-        val emittedValues = mutableListOf<Resource<List<Repository>>>()
-        val observer = Observer<Resource<List<Repository>>> { emittedValues.add(it) }
+        val emittedValues = mutableListOf<Resource<List<com.domain.model.Repository>>>()
+        val observer = Observer<Resource<List<com.domain.model.Repository>>> { emittedValues.add(it) }
         viewModel.repositories.observeForever(observer)
 
         advanceUntilIdle()
 
-        assert((emittedValues.last() as Resource.Success).data == repositories)
+        assert((emittedValues.last() as Resource.Success).data == domainResponse.items)
 
         viewModel.repositories.removeObserver(observer)
     }
+
 
 
     @Test
@@ -79,7 +87,9 @@ class SharedViewModelTest {
         val repo = "repo"
         val pullRequests = MocksRepository.mockPullRequests
 
-        val response = Resource.Success(pullRequests)
+        val mappedPullRequests = pullRequests.map { it.toDomain() }
+
+        val response = Resource.Success(mappedPullRequests)
 
         coEvery { getPullRequestsUseCase(owner, repo) } returns response
 
@@ -87,16 +97,17 @@ class SharedViewModelTest {
         viewModel.getPullRequests(owner, repo)
 
         // Then
-        val emittedValues = mutableListOf<Resource<List<PullRequestResponse>>>()
-        val observer = Observer<Resource<List<PullRequestResponse>>> { emittedValues.add(it) }
+        val emittedValues = mutableListOf<Resource<List<PullRequest>>>()
+        val observer = Observer<Resource<List<PullRequest>>> { emittedValues.add(it) }
         viewModel.pullRequests.observeForever(observer)
 
         advanceUntilIdle()
 
-        assert((emittedValues.last() as Resource.Success).data == pullRequests)
+        assert((emittedValues.last() as Resource.Success).data == mappedPullRequests)
 
         viewModel.pullRequests.removeObserver(observer)
     }
+
 
     @Test
     fun `getPullRequests emits error when pull request call fails`() = runTest {
@@ -105,7 +116,7 @@ class SharedViewModelTest {
         val repo = "repo"
         val errorMessage = "Erro ao obter pull requests"
 
-        val response = Resource.Error<List<PullRequestResponse>>(errorMessage)
+        val response = Resource.Error<List<PullRequest>>(errorMessage)
 
         coEvery { getPullRequestsUseCase(owner, repo) } returns response
 
@@ -113,8 +124,8 @@ class SharedViewModelTest {
         viewModel.getPullRequests(owner, repo)
 
         // Then
-        val emittedValues = mutableListOf<Resource<List<PullRequestResponse>>>()
-        val observer = Observer<Resource<List<PullRequestResponse>>> { emittedValues.add(it) }
+        val emittedValues = mutableListOf<Resource<List<PullRequest>>>()
+        val observer = Observer<Resource<List<PullRequest>>> { emittedValues.add(it) }
         viewModel.pullRequests.observeForever(observer)
 
         advanceUntilIdle()
@@ -131,7 +142,9 @@ class SharedViewModelTest {
         val repo = "repo"
         val closedPullRequests = MocksRepository.mockPullRequests
 
-        val response = Resource.Success(closedPullRequests)
+        val mappedClosedPullRequests = closedPullRequests.map { it.toDomain() }
+
+        val response = Resource.Success(mappedClosedPullRequests)
 
         coEvery { getClosedPullRequestsUseCase(owner, repo) } returns response
 
@@ -139,13 +152,13 @@ class SharedViewModelTest {
         viewModel.getPullRequestsClosed(owner, repo)
 
         // Then
-        val emittedValues = mutableListOf<Resource<List<PullRequestResponse>>>()
-        val observer = Observer<Resource<List<PullRequestResponse>>> { emittedValues.add(it) }
+        val emittedValues = mutableListOf<Resource<List<PullRequest>>>()
+        val observer = Observer<Resource<List<PullRequest>>> { emittedValues.add(it) }
         viewModel.pullRequestsClosed.observeForever(observer)
 
         advanceUntilIdle()
 
-        assert((emittedValues.last() as Resource.Success).data == closedPullRequests)
+        assert((emittedValues.last() as Resource.Success).data == mappedClosedPullRequests)
 
         viewModel.pullRequestsClosed.removeObserver(observer)
     }
@@ -157,7 +170,7 @@ class SharedViewModelTest {
         val repo = "repo"
         val errorMessage = "Erro ao obter pull requests fechados"
 
-        val response = Resource.Error<List<PullRequestResponse>>(errorMessage)
+        val response = Resource.Error<List<PullRequest>>(errorMessage)
 
         coEvery { getClosedPullRequestsUseCase(owner, repo) } returns response
 
@@ -165,8 +178,8 @@ class SharedViewModelTest {
         viewModel.getPullRequestsClosed(owner, repo)
 
         // Then
-        val emittedValues = mutableListOf<Resource<List<PullRequestResponse>>>()
-        val observer = Observer<Resource<List<PullRequestResponse>>> { emittedValues.add(it) }
+        val emittedValues = mutableListOf<Resource<List<PullRequest>>>()
+        val observer = Observer<Resource<List<PullRequest>>> { emittedValues.add(it) }
         viewModel.pullRequestsClosed.observeForever(observer)
 
         advanceUntilIdle()
@@ -175,6 +188,5 @@ class SharedViewModelTest {
 
         viewModel.pullRequestsClosed.removeObserver(observer)
     }
-
 
 }

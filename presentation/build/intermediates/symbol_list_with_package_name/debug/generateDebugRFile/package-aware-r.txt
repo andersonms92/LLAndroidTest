@@ -1,4 +1,4 @@
-com.llandroidtest.presentation
+com.presentation
 color black
 color purple_200
 color purple_500
@@ -10,7 +10,7 @@ drawable circle_background
 drawable ic_fork
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable ic_like
+drawable ic_star
 drawable ic_user
 font roboto
 font roboto_medium
@@ -22,8 +22,11 @@ id icForks
 id icLikes
 id imgUserPhoto
 id iv_user_avatar
+id nav_host_fragment
+id progressBarLoading
 id recyclerViewUserRepositories
 id rv_pull_requests
+id toolbar
 id tvForksCount
 id tvLikesCount
 id tvName
@@ -36,11 +39,16 @@ id tv_pr_body
 id tv_pr_title
 id tv_user_name
 id tv_user_username
+layout activity_main
 layout fragment_pull_requests
 layout fragment_user_repository
 layout item_pull_request
 layout item_user_repository
+mipmap ic_launcher
+mipmap ic_launcher_round
 navigation nav_graph
 string app_name
 string repository_description_tools
 style Theme_LLAndroidTest
+xml backup_rules
+xml data_extraction_rules

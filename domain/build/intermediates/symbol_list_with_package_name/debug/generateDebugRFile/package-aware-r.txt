@@ -1,1 +1,1 @@
-com.llandroidtest.domain
+com.domain

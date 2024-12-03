@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LLAndroidTest</string>
+    <string name="repository_description_tools">Criar um aplicativo para consultar a API do GitHub e trazer os repositórios mais populares de Java.</string>
+</resources>
