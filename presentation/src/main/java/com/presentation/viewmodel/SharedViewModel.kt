@@ -109,11 +109,6 @@ class SharedViewModel @Inject constructor(
         }
     }
 
-    fun resetPagination() {
-        currentPage = 1
-        allRepositories.clear()
-    }
-
     private fun getErrorMessage(e: Exception): String {
         return when (e) {
             is java.net.UnknownHostException -> "Sem conexão com a internet."
