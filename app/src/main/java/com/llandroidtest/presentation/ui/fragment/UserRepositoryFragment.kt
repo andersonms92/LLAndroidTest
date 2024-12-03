@@ -21,16 +21,19 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class UserRepositoryFragment : Fragment() {
 
-    private val binding by lazy { FragmentUserRepositoryBinding.bind(requireView()) }
+    private var _binding: FragmentUserRepositoryBinding? = null
+    private val binding get() = _binding!!
+
     private val sharedViewModel: SharedViewModel by activityViewModels()
-    private lateinit var adapter: UserRepositoryAdapter
+    lateinit var adapter: UserRepositoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_user_repository, container, false)
+        _binding = FragmentUserRepositoryBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,11 +45,9 @@ class UserRepositoryFragment : Fragment() {
         })
 
         if (sharedViewModel.allRepositories.isEmpty()) {
-            Log.d("UserRepositoryFragment", "Fazendo requisição para carregar dados")
             sharedViewModel.getRepositories(query = "language:java", page = 1)
         } else {
-            Log.d("UserRepositoryFragment", "Dados carregados: ${sharedViewModel.allRepositories.size} repositórios")
-            adapter.updateData(sharedViewModel.allRepositories)
+             adapter.updateData(sharedViewModel.allRepositories)
         }
     }
 
@@ -102,10 +103,4 @@ class UserRepositoryFragment : Fragment() {
             }
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        sharedViewModel.resetPagination()
-    }
-
 }

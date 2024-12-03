@@ -6,6 +6,7 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import androidx.lifecycle.Observer
 import androidx.lifecycle.SavedStateHandle
+import com.llandroidtest.data.model.PullRequestResponse
 import com.llandroidtest.utils.MainCoroutineRule
 import com.llandroidtest.data.model.RepositoryResponse
 import com.llandroidtest.domain.repository.GithubRepository
@@ -33,8 +34,6 @@ class SharedViewModelTest {
     private val getClosedPullRequestsUseCase: GetClosedPullRequestsUseCase = mockk()
     private val getPullRequestsUseCase: GetPullRequestsUseCase = mockk()
     private val getRepositoriesUseCase: GetRepositoriesUseCase = mockk()
-
-    private val savedStateHandle: SavedStateHandle = mockk()
 
     @Before
     fun setUp() {
@@ -71,4 +70,111 @@ class SharedViewModelTest {
 
         viewModel.repositories.removeObserver(observer)
     }
+
+
+    @Test
+    fun `getPullRequests emits success when pull request call is successful`() = runTest {
+        // Given
+        val owner = "owner"
+        val repo = "repo"
+        val pullRequests = MocksRepository.mockPullRequests
+
+        val response = Resource.Success(pullRequests)
+
+        coEvery { getPullRequestsUseCase(owner, repo) } returns response
+
+        // When
+        viewModel.getPullRequests(owner, repo)
+
+        // Then
+        val emittedValues = mutableListOf<Resource<List<PullRequestResponse>>>()
+        val observer = Observer<Resource<List<PullRequestResponse>>> { emittedValues.add(it) }
+        viewModel.pullRequests.observeForever(observer)
+
+        advanceUntilIdle()
+
+        assert((emittedValues.last() as Resource.Success).data == pullRequests)
+
+        viewModel.pullRequests.removeObserver(observer)
+    }
+
+    @Test
+    fun `getPullRequests emits error when pull request call fails`() = runTest {
+        // Given
+        val owner = "owner"
+        val repo = "repo"
+        val errorMessage = "Erro ao obter pull requests"
+
+        val response = Resource.Error<List<PullRequestResponse>>(errorMessage)
+
+        coEvery { getPullRequestsUseCase(owner, repo) } returns response
+
+        // When
+        viewModel.getPullRequests(owner, repo)
+
+        // Then
+        val emittedValues = mutableListOf<Resource<List<PullRequestResponse>>>()
+        val observer = Observer<Resource<List<PullRequestResponse>>> { emittedValues.add(it) }
+        viewModel.pullRequests.observeForever(observer)
+
+        advanceUntilIdle()
+
+        assert((emittedValues.last() as Resource.Error).message == errorMessage)
+
+        viewModel.pullRequests.removeObserver(observer)
+    }
+
+    @Test
+    fun `getPullRequestsClosed emits success when closed pull request call is successful`() = runTest {
+        // Given
+        val owner = "owner"
+        val repo = "repo"
+        val closedPullRequests = MocksRepository.mockPullRequests
+
+        val response = Resource.Success(closedPullRequests)
+
+        coEvery { getClosedPullRequestsUseCase(owner, repo) } returns response
+
+        // When
+        viewModel.getPullRequestsClosed(owner, repo)
+
+        // Then
+        val emittedValues = mutableListOf<Resource<List<PullRequestResponse>>>()
+        val observer = Observer<Resource<List<PullRequestResponse>>> { emittedValues.add(it) }
+        viewModel.pullRequestsClosed.observeForever(observer)
+
+        advanceUntilIdle()
+
+        assert((emittedValues.last() as Resource.Success).data == closedPullRequests)
+
+        viewModel.pullRequestsClosed.removeObserver(observer)
+    }
+
+    @Test
+    fun `getPullRequestsClosed emits error when closed pull request call fails`() = runTest {
+        // Given
+        val owner = "owner"
+        val repo = "repo"
+        val errorMessage = "Erro ao obter pull requests fechados"
+
+        val response = Resource.Error<List<PullRequestResponse>>(errorMessage)
+
+        coEvery { getClosedPullRequestsUseCase(owner, repo) } returns response
+
+        // When
+        viewModel.getPullRequestsClosed(owner, repo)
+
+        // Then
+        val emittedValues = mutableListOf<Resource<List<PullRequestResponse>>>()
+        val observer = Observer<Resource<List<PullRequestResponse>>> { emittedValues.add(it) }
+        viewModel.pullRequestsClosed.observeForever(observer)
+
+        advanceUntilIdle()
+
+        assert((emittedValues.last() as Resource.Error).message == errorMessage)
+
+        viewModel.pullRequestsClosed.removeObserver(observer)
+    }
+
+
 }
