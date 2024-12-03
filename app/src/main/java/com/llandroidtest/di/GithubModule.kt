@@ -1,8 +1,8 @@
 package com.llandroidtest.di
 
 import com.llandroidtest.data.remote.GithubApi
+import com.llandroidtest.data.repository.GithubRepositoryImpl
 import com.llandroidtest.domain.repository.GithubRepository
-import com.llandroidtest.domain.repository.GithubRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

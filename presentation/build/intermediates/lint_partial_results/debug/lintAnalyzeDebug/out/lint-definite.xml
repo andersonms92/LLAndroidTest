@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.6.0" type="incidents">
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_pull_request.xml"
+            line="42"
+            column="14"
+            startOffset="1619"
+            endLine="42"
+            endColumn="23"
+            endOffset="1628"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_user_repository.xml"
+            line="18"
+            column="10"
+            startOffset="663"
+            endLine="18"
+            endColumn="19"
+            endOffset="672"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_user_repository.xml"
+            line="75"
+            column="14"
+            startOffset="2958"
+            endLine="75"
+            endColumn="23"
+            endOffset="2967"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_user_repository.xml"
+            line="94"
+            column="14"
+            startOffset="3709"
+            endLine="94"
+            endColumn="23"
+            endOffset="3718"/>
+    </incident>
+
+    <incident
+        id="NotifyDataSetChanged"
+        severity="warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="${:presentation*debug*MAIN*sourceProvider*0*javaDir*0}/com/llandroidtest/presentation/presentation/adapter/PullRequestsAdapter.kt"
+            line="22"
+            column="9"
+            startOffset="783"
+            endLine="22"
+            endColumn="31"
+            endOffset="805"/>
+    </incident>
+
+    <incident
+        id="NotifyDataSetChanged"
+        severity="warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="${:presentation*debug*MAIN*sourceProvider*0*javaDir*0}/com/llandroidtest/presentation/presentation/adapter/UserRepositoryAdapter.kt"
+            line="61"
+            column="9"
+            startOffset="2556"
+            endLine="61"
+            endColumn="31"
+            endOffset="2578"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Number formatting does not take into account locale settings. Consider using `String.format` instead.">
+        <location
+            file="${:presentation*debug*MAIN*sourceProvider*0*javaDir*0}/com/llandroidtest/presentation/presentation/adapter/UserRepositoryAdapter.kt"
+            line="31"
+            column="31"
+            startOffset="1530"
+            endLine="31"
+            endColumn="63"
+            endOffset="1562"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Number formatting does not take into account locale settings. Consider using `String.format` instead.">
+        <location
+            file="${:presentation*debug*MAIN*sourceProvider*0*javaDir*0}/com/llandroidtest/presentation/presentation/adapter/UserRepositoryAdapter.kt"
+            line="32"
+            column="31"
+            startOffset="1593"
+            endLine="32"
+            endColumn="68"
+            endOffset="1630"/>
+    </incident>
+
+</incidents>

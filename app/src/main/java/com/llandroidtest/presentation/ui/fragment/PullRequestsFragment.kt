@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.llandroidtest.R
 import com.llandroidtest.databinding.FragmentPullRequestsBinding
 import com.llandroidtest.presentation.adapter.PullRequestsAdapter
@@ -22,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class PullRequestsFragment : Fragment() {
 
     private val binding by lazy { FragmentPullRequestsBinding.bind(requireView()) }
-    private val sharedViewModel: SharedViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var adapter: PullRequestsAdapter
 
     override fun onCreateView(
@@ -72,15 +71,24 @@ class PullRequestsFragment : Fragment() {
         sharedViewModel.pullRequestsClosed.observe(viewLifecycleOwner) { resource ->
             when (resource) {
                 is Resource.Loading -> {
+                    binding.progressBarLoading.visibility = View.VISIBLE
                 }
                 is Resource.Success -> {
+                    binding.progressBarLoading.visibility = View.GONE
                     val pullRequests = resource.data.size
                     "/ $pullRequests closed".also { binding.tvClosedCount.text = it }
                 }
                 is Resource.Error -> {
+                    binding.progressBarLoading.visibility = View.GONE
                     Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        sharedViewModel.resetPagination()
+    }
+
 }

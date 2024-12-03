@@ -1,0 +1,538 @@
+[
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_unchecked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_icon_indeterminate_checked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_icon_indeterminate_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_track.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_pressed.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_pressed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\material_ic_keyboard_arrow_left_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\material_ic_keyboard_arrow_left_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_menu_cut_mtrl_alpha.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_menu_cut_mtrl_alpha.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_dropdown_arrow.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_dropdown_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\material_ic_menu_arrow_down_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\material_ic_menu_arrow_down_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_icon_checked_unchecked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_icon_checked_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\btn_checkbox_checked_to_unchecked_mtrl_animation.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\btn_checkbox_checked_to_unchecked_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_mtrl_chip_close_circle.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_mtrl_chip_close_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_menu_share_mtrl_alpha.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_menu_share_mtrl_alpha.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_menu_selectall_mtrl_alpha.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_menu_selectall_mtrl_alpha.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_mtrl_checked_circle.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_mtrl_checked_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_ic_indeterminate.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_ic_indeterminate.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_launcher_background.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-main-52:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_call_answer_video.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\ic_call_answer_video.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_star_black_48dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_star_black_48dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_checked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_star_half_black_48dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_star_half_black_48dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_keyboard_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_keyboard_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_track_decoration.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_track_decoration.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\btn_checkbox_unchecked_to_checked_mtrl_animation.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\btn_checkbox_unchecked_to_checked_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_icon_unchecked_checked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_icon_unchecked_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_ic_check_mark.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_ic_check_mark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_ic_error.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_ic_error.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_checked_pressed.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_checked_pressed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_launcher_foreground.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-main-52:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\material_ic_menu_arrow_up_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\material_ic_menu_arrow_up_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_mtrl_chip_checked_black.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_mtrl_chip_checked_black.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_clock_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_clock_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_dialog_background.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_dialog_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_m3_chip_close.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_m3_chip_close.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\btn_checkbox_checked_mtrl.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\btn_checkbox_checked_mtrl.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_search_black_24.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_search_black_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_ic_checkbox_checked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_ic_checkbox_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\btn_radio_on_to_off_mtrl_animation.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\btn_radio_on_to_off_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\avd_show_password.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\avd_show_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_call_answer_video_low.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\ic_call_answer_video_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_ic_cancel.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_ic_cancel.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\m3_tabs_rounded_line_indicator.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\m3_tabs_rounded_line_indicator.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_like.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-main-52:\\drawable\\ic_like.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\m3_avd_hide_password.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\m3_avd_hide_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_unchecked_pressed.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_unchecked_pressed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_unchecked_checked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_unchecked_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_checked_unchecked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_checked_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\navigation_empty_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_pressed_checked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_pressed_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_arrow_back_black_24.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_arrow_back_black_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\btn_radio_off_mtrl.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\btn_radio_off_mtrl.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\avd_hide_password.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\avd_hide_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\design_ic_visibility.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\design_ic_visibility.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_btn_check_material_anim.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_btn_check_material_anim.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_call_answer_low.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\ic_call_answer_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_m3_chip_check.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_m3_chip_check.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_fork.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-main-52:\\drawable\\ic_fork.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_mtrl_chip_checked_circle.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_mtrl_chip_checked_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_call_answer.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\ic_call_answer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\m3_tabs_line_indicator.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\m3_tabs_line_indicator.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_icon_unchecked_indeterminate.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_icon_unchecked_indeterminate.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_call_decline.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\ic_call_decline.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\btn_checkbox_unchecked_mtrl.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\btn_checkbox_unchecked_mtrl.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\m3_avd_show_password.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\m3_avd_show_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_tabs_default_indicator.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_tabs_default_indicator.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\material_ic_keyboard_arrow_right_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\material_ic_keyboard_arrow_right_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\m3_password_eye.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\m3_password_eye.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\material_ic_clear_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\material_ic_clear_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\design_password_eye.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\design_password_eye.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\circle_background.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-main-52:\\drawable\\circle_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\tooltip_frame_dark.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-resources-1.6.1-29:\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\material_ic_calendar_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\material_ic_calendar_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_menu_paste_mtrl_am_alpha.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_menu_paste_mtrl_am_alpha.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\test_level_drawable.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\test_level_drawable.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_popupmenu_background.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_popupmenu_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\btn_radio_on_mtrl.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\btn_radio_on_mtrl.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\tooltip_frame_light.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\tooltip_frame_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_checked_unchecked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_checked_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_icon_indeterminate_unchecked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_icon_indeterminate_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_call_decline_low.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-core-1.15.0-2:\\drawable\\ic_call_decline_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_icon_checked_indeterminate.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_icon_checked_indeterminate.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_m3_chip_checked_circle.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_m3_chip_checked_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\material_ic_edit_black_24dp.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\material_ic_edit_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_clear_black_24.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\ic_clear_black_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_pressed_unchecked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_pressed_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\ic_user.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-main-52:\\drawable\\ic_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button_icon.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\design_ic_visibility_off.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_btn_radio_material_anim.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_btn_radio_material_anim.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_checkbox_button.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_checkbox_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_switch_thumb_unchecked_checked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_switch_thumb_unchecked_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_bottomsheet_drag_handle.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_bottomsheet_drag_handle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_ic_checkbox_unchecked.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_ic_checkbox_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\btn_radio_off_to_on_mtrl_animation.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\btn_radio_off_to_on_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_ic_arrow_drop_down.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_ic_arrow_drop_down.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\abc_ic_menu_copy_mtrl_am_alpha.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-appcompat-1.6.1-42:\\drawable\\abc_ic_menu_copy_mtrl_am_alpha.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-release-51:\\drawable\\mtrl_ic_arrow_drop_up.xml",
+        "source": "C:\\Users\\Chaos\\.gradle\\daemon\\8.7\\com.llandroidtest.presentation-material-1.9.0-41:\\drawable\\mtrl_ic_arrow_drop_up.xml"
+    }
+]

@@ -5,7 +5,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Log
 import com.llandroidtest.data.remote.GithubApi
-import com.llandroidtest.utils.Constants.Companion.BASE_URL
+import com.llandroidtest.data.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

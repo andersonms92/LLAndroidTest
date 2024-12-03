@@ -1,12 +1,13 @@
 package com.llandroidtest.presentation.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,7 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class UserRepositoryFragment : Fragment() {
 
     private val binding by lazy { FragmentUserRepositoryBinding.bind(requireView()) }
-    private val sharedViewModel: SharedViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var adapter: UserRepositoryAdapter
 
     override fun onCreateView(
@@ -36,16 +37,17 @@ class UserRepositoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
-        observeViewModel()
+        lifecycle.addObserver(FragmentLifecycleObserver {
+            observeViewModel()
+        })
 
-        if (savedInstanceState == null) {
+        if (sharedViewModel.allRepositories.isEmpty()) {
+            Log.d("UserRepositoryFragment", "Fazendo requisição para carregar dados")
             sharedViewModel.getRepositories(query = "language:java", page = 1)
+        } else {
+            Log.d("UserRepositoryFragment", "Dados carregados: ${sharedViewModel.allRepositories.size} repositórios")
+            adapter.updateData(sharedViewModel.allRepositories)
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        sharedViewModel.getRepositories(query = "language:java", page = 1)
     }
 
     private fun setupRecyclerView() {
@@ -65,13 +67,13 @@ class UserRepositoryFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                if (dy > 0) {
+                if (dy > 0 && !sharedViewModel.isLoading) {
                     val visibleItemCount = layoutManager.childCount
                     val totalItemCount = layoutManager.itemCount
                     val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
 
                     if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount - 5) {
-                        sharedViewModel.getRepositories(query = "language:java")
+                        sharedViewModel.getRepositories(query = "language:java", page = sharedViewModel.currentPage)
                     }
                 }
             }
@@ -79,18 +81,31 @@ class UserRepositoryFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        sharedViewModel.repositories.observe(viewLifecycleOwner) { resource ->
-            when (resource) {
-                is Resource.Loading -> {
-                }
-                is Resource.Success -> {
-                    val repositories = resource.data
-                    adapter.updateData(repositories)
-                }
-                is Resource.Error -> {
-                    Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT).show()
+        viewLifecycleOwnerLiveData.observe(viewLifecycleOwner) { viewLifecycleOwner ->
+            sharedViewModel.repositories.observe(viewLifecycleOwner) { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        binding.progressBarLoading.visibility = View.VISIBLE
+                    }
+
+                    is Resource.Success -> {
+                        binding.progressBarLoading.visibility = View.GONE
+                        val repositories = resource.data
+                        adapter.updateData(repositories)
+                    }
+
+                    is Resource.Error -> {
+                        binding.progressBarLoading.visibility = View.GONE
+                        Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        sharedViewModel.resetPagination()
+    }
+
 }

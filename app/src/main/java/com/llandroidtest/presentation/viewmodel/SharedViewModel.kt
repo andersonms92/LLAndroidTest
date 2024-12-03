@@ -6,15 +6,18 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.llandroidtest.data.model.PullRequestResponse
 import com.llandroidtest.data.model.Repository
-import com.llandroidtest.data.model.RepositoryResponse
-import com.llandroidtest.domain.repository.GithubRepository
+import com.llandroidtest.domain.usecase.GetClosedPullRequestsUseCase
+import com.llandroidtest.domain.usecase.GetPullRequestsUseCase
+import com.llandroidtest.domain.usecase.GetRepositoriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SharedViewModel @Inject constructor(
-    private val githubRepository: GithubRepository
+    private val getRepositoriesUseCase: GetRepositoriesUseCase,
+    private val getPullRequestsUseCase: GetPullRequestsUseCase,
+    private val getClosedPullRequestsUseCase: GetClosedPullRequestsUseCase
 ) : ViewModel() {
 
     private val _repositories = MutableLiveData<Resource<List<Repository>>>()
@@ -26,9 +29,9 @@ class SharedViewModel @Inject constructor(
     private val _pullRequestsClosed = MutableLiveData<Resource<List<PullRequestResponse>>>()
     val pullRequestsClosed: LiveData<Resource<List<PullRequestResponse>>> = _pullRequestsClosed
 
-    private var currentPage = 1
-    private var isLoading = false
-    private var allRepositories = mutableListOf<Repository>()
+    var currentPage =  1
+    var isLoading = false
+    var allRepositories =  mutableListOf<Repository>()
 
     fun getRepositories(query: String, page: Int = currentPage) {
         if (isLoading) return
@@ -37,17 +40,68 @@ class SharedViewModel @Inject constructor(
         viewModelScope.launch {
             _repositories.postValue(Resource.Loading())
             try {
-                val response = githubRepository.getRepositories(query, page)
-                if (page == 1) {
-                    allRepositories.clear()
+                when (val response = getRepositoriesUseCase(query, page)) {
+                    is Resource.Success -> {
+                        if (page == 1) {
+                            allRepositories.clear()
+                        }
+                        allRepositories.addAll(response.data.items)
+                        _repositories.postValue(Resource.Success(allRepositories))
+                        currentPage++
+                    }
+                    is Resource.Error -> {
+                        _repositories.postValue(Resource.Error(response.message))
+                    }
+
+                    is Resource.Loading -> {}
                 }
-                allRepositories.addAll(response.items)
-                _repositories.postValue(Resource.Success(allRepositories))
-                currentPage++
             } catch (e: Exception) {
-                _repositories.postValue(Resource.Error(e.message ?: "Unknown error"))
+                val errorMessage = getErrorMessage(e)
+                _repositories.postValue(Resource.Error(errorMessage))
             } finally {
                 isLoading = false
+            }
+        }
+    }
+
+    fun getPullRequests(owner: String, repo: String) {
+        viewModelScope.launch {
+            _pullRequests.postValue(Resource.Loading())
+            try {
+                when (val response = getPullRequestsUseCase(owner, repo)) {
+                    is Resource.Success -> {
+                        _pullRequests.postValue(Resource.Success(response.data))
+                    }
+                    is Resource.Error -> {
+                        _pullRequests.postValue(Resource.Error(response.message))
+                    }
+
+                    is Resource.Loading -> {}
+                }
+            } catch (e: Exception) {
+                val errorMessage = getErrorMessage(e)
+                _pullRequests.postValue(Resource.Error(errorMessage))
+            }
+        }
+    }
+
+    fun getPullRequestsClosed(owner: String, repo: String) {
+        viewModelScope.launch {
+            _pullRequestsClosed.postValue(Resource.Loading())
+            try {
+                when (val response = getClosedPullRequestsUseCase(owner, repo)) {
+                    is Resource.Success -> {
+                        _pullRequestsClosed.postValue(Resource.Success(response.data))
+                    }
+                    is Resource.Error -> {
+                        _pullRequestsClosed.postValue(Resource.Error(response.message))
+                    }
+
+                    is Resource.Loading -> {}
+                }
+            } catch (e: Exception) {
+                val errorMessage = getErrorMessage(e)
+                _pullRequestsClosed.postValue(Resource.Error(errorMessage))
             }
         }
     }
@@ -57,130 +111,11 @@ class SharedViewModel @Inject constructor(
         allRepositories.clear()
     }
 
-    fun getPullRequests(owner: String, repo: String) {
-        viewModelScope.launch {
-            _pullRequests.postValue(Resource.Loading())
-            try {
-                val response = githubRepository.getPullRequests(owner, repo)
-                _pullRequests.postValue(Resource.Success(response))
-            } catch (e: Exception) {
-                _pullRequests.postValue(Resource.Error(e.message ?: "Unknown error"))
-            }
-        }
-    }
-
-    fun getPullRequestsClosed(owner: String, repo: String) {
-        viewModelScope.launch {
-            _pullRequestsClosed.postValue(Resource.Loading())
-            try {
-                val response = githubRepository.getPullRequestsClosed(owner, repo)
-                _pullRequestsClosed.postValue(Resource.Success(response))
-            } catch (e: Exception) {
-                _pullRequestsClosed.postValue(Resource.Error(e.message ?: "Unknown error"))
-            }
+    private fun getErrorMessage(e: Exception): String {
+        return when (e) {
+            is java.net.UnknownHostException -> "Sem conexão com a internet."
+            is java.net.SocketTimeoutException -> "A solicitação expirou. Tente novamente."
+            else -> e.message ?: "Erro desconhecido"
         }
     }
 }
-
-//@HiltViewModel
-//class SharedViewModel @Inject constructor(
-//    private val githubUseCase: GithubUseCase
-//) : ViewModel() {
-//
-//    private val _repositories = MutableLiveData<Resource<RepositoryResponseData>>()
-//    val repositories: LiveData<Resource<RepositoryResponseData>> = _repositories
-//
-//    private val _pullRequests = MutableLiveData<Resource<List<PullRequestResponse>>>()
-//    val pullRequests: LiveData<Resource<List<PullRequestResponse>>> = _pullRequests
-//
-//    @SuppressLint("CheckResult")
-//    suspend fun getRepositories(query: String, page: Int) {
-//        _repositories.postValue(Resource.Loading())
-//        githubUseCase.getRepositories(query, page)
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe({ response ->
-//                _repositories.postValue(Resource.Success(response))
-//            }, { error ->
-//                _repositories.postValue(Resource.Error(error.message ?: "Unknown error"))
-//            })
-//    }
-//
-//    @SuppressLint("CheckResult")
-//    suspend fun getPullRequests(owner: String, repo: String) {
-//        _pullRequests.postValue(Resource.Loading())
-//        githubUseCase.getPullRequests(owner, repo)
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe({ response ->
-//                _pullRequests.postValue(Resource.Success(response))
-//            }, { error ->
-//                _pullRequests.postValue(Resource.Error(error.message ?: "Unknown error"))
-//            })
-//    }
-//}
-
-
-//@HiltViewModel
-//class SharedViewModel @Inject constructor(
-//    private val githubUseCase: GithubUseCase
-//) : ViewModel() {
-//
-//    private val _repositoryList = MutableStateFlow<List<RepositoryResponseItem>>(emptyList())
-//    val repositoryList: StateFlow<List<RepositoryResponseItem>> get() = _repositoryList
-//
-//    private val _pullRequestList = MutableStateFlow<List<PullRequestResponseItem>>(emptyList())
-//    val pullRequestList: StateFlow<List<PullRequestResponseItem>> get() = _pullRequestList
-//
-//    private val _isLoading = MutableStateFlow(false)
-//    val isLoading: StateFlow<Boolean> get() = _isLoading
-//
-//    private var currentPage = 1
-//
-//    fun getRepositories(query: String, page: Int) {
-//        viewModelScope.launch {
-//            if (_isLoading.value) return@launch
-//            _isLoading.value = true
-//            try {
-//                val response = githubUseCase.getRepositories(query, page)
-//                withContext(Dispatchers.Main) {
-//                    _repositoryList.value = if (page == 1) {
-//                        response
-//                    } else {
-//                        _repositoryList.value + response
-//                    }
-//                    currentPage = page
-//                }
-//            } catch (e: Exception) {
-//                _isLoading.value = false
-//                Timber.tag("Endpoint getRepositories").e(e)
-//            } finally {
-//                _isLoading.value = false
-//            }
-//        }
-//    }
-//
-//    fun getPullRequests(owner: String, repo: String) {
-//        viewModelScope.launch {
-//            if (_isLoading.value) return@launch
-//            _isLoading.value = true
-//            try {
-//                val response = githubUseCase.getPullRequests(owner, repo)
-//                withContext(Dispatchers.Main) {
-//                    _pullRequestList.value = response
-//                }
-//            } catch (e: Exception) {
-//                _isLoading.value = false
-//                Timber.tag("Endpoint getPullRequests").e(e)
-//            } finally {
-//                _isLoading.value = false
-//            }
-//        }
-//    }
-//
-//    fun loadMoreRepositories(query: String) {
-//        if (!_isLoading.value) {
-//            getRepositories(query, currentPage + 1)
-//        }
-//    }
-//}
