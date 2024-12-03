@@ -22,7 +22,7 @@ class PullRequestsFragment : Fragment() {
 
     private val binding by lazy { FragmentPullRequestsBinding.bind(requireView()) }
     private val sharedViewModel: SharedViewModel by activityViewModels()
-    private lateinit var adapter: PullRequestsAdapter
+    lateinit var adapter: PullRequestsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,

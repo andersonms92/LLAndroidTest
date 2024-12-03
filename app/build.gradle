@@ -104,14 +104,18 @@ android {
 
         // Testes
         testImplementation(libs.bundles.test)
+        implementation libs.androidx.junit.ktx
+        implementation libs.androidx.runner
+        implementation libs.androidx.espresso.core
+        implementation libs.androidx.espresso.contrib
+        implementation libs.androidx.navigation.testing
+        androidTestImplementation libs.androidx.fragment.testing.v157
+        implementation libs.androidx.espresso.intents
 
-
-            // Coroutines Reactive para permitir a interoperabilidade com RxJava
-            implementation libs.kotlinx.coroutines.reactive
-            implementation libs.rxjava
-        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-rx3:1.7.3"
-
-
+        // Coroutines Reactive para permitir a interoperabilidade com RxJava
+        implementation libs.kotlinx.coroutines.reactive
+        implementation libs.rxjava
+        implementation libs.kotlinx.coroutines.rx3
 
     }
 }

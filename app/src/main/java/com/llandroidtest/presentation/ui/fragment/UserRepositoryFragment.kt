@@ -23,7 +23,7 @@ class UserRepositoryFragment : Fragment() {
 
     private val binding by lazy { FragmentUserRepositoryBinding.bind(requireView()) }
     private val sharedViewModel: SharedViewModel by activityViewModels()
-    private lateinit var adapter: UserRepositoryAdapter
+    lateinit var adapter: UserRepositoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
