@@ -15,7 +15,11 @@ class GetPullRequestsUseCase @Inject constructor(
             val response = withContext(Dispatchers.IO) {
                 githubRepository.getPullRequests(owner, repo)
             }
-            Resource.Success(response)
+            if (response.isEmpty()) {
+                Resource.Error("No pull requests found")
+            } else {
+                Resource.Success(response)
+            }
         } catch (e: Exception) {
             Resource.Error(e.message ?: "Unknown error")
         }

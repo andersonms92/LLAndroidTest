@@ -1,7 +1,5 @@
 package com.data.model.mapper
 
-import com.domain.model.User
-
 fun com.data.model.RepositoryResponse.toDomain(): com.domain.model.RepositoryResponse {
     return object : com.domain.model.RepositoryResponse {
         override val totalCount = this@toDomain.totalCount

@@ -14,8 +14,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-private const val s = "em conexão com a internet."
-
 @HiltViewModel
 class SharedViewModel @Inject constructor(
     private val getRepositoriesUseCase: GetRepositoriesUseCase,
@@ -73,7 +71,11 @@ class SharedViewModel @Inject constructor(
             try {
                 when (val response = getPullRequestsUseCase(owner, repo)) {
                     is Resource.Success -> {
-                        _pullRequests.postValue(Resource.Success(response.data))
+                        if (response.data.isEmpty()) {
+                            _pullRequests.postValue(Resource.Error("No open pull requests found"))
+                        } else {
+                            _pullRequests.postValue(Resource.Success(response.data))
+                        }
                     }
                     is Resource.Error -> {
                         _pullRequests.postValue(Resource.Error(response.message))
@@ -94,7 +96,11 @@ class SharedViewModel @Inject constructor(
             try {
                 when (val response = getClosedPullRequestsUseCase(owner, repo)) {
                     is Resource.Success -> {
-                        _pullRequestsClosed.postValue(Resource.Success(response.data))
+                        if (response.data.isEmpty()) {
+                            _pullRequestsClosed.postValue(Resource.Error("No closed pull requests found"))
+                        } else {
+                            _pullRequestsClosed.postValue(Resource.Success(response.data))
+                        }
                     }
                     is Resource.Error -> {
                         _pullRequestsClosed.postValue(Resource.Error(response.message))

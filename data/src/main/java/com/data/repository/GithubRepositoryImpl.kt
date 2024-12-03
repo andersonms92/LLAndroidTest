@@ -41,6 +41,10 @@ class GithubRepositoryImpl @Inject constructor(
     override suspend fun getPullRequests(owner: String, repo: String): List<PullRequest> {
         val pullRequests = githubApi.getPullRequests(owner, repo)
 
+        if (pullRequests.isEmpty()) {
+            return emptyList()
+        }
+
         return pullRequests.map {
             PullRequestResponse(
                 title = it.title,
@@ -56,6 +60,10 @@ class GithubRepositoryImpl @Inject constructor(
 
     override suspend fun getPullRequestsClosed(owner: String, repo: String): List<PullRequest> {
         val pullRequests = githubApi.getPullRequestsClosed(owner, repo)
+
+        if (pullRequests.isEmpty()) {
+            return emptyList()
+        }
 
         return pullRequests.map {
             PullRequestResponse(

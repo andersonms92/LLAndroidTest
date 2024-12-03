@@ -61,12 +61,13 @@ class PullRequestsFragment : Fragment() {
                 is Resource.Loading -> {
                 }
                 is Resource.Success -> {
+                    binding.progressBarLoading.visibility = View.GONE
                     val pullRequests = it.data
                     adapter.submitList(pullRequests)
                     "${pullRequests.size} opened".also { binding.tvOpenedCount.text = it }
                  }
                 is Resource.Error -> {
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    binding.progressBarLoading.visibility = View.GONE
                 }
             }
         }
@@ -82,15 +83,8 @@ class PullRequestsFragment : Fragment() {
                 }
                 is Resource.Error -> {
                     binding.progressBarLoading.visibility = View.GONE
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
-
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        sharedViewModel.resetPagination()
-//    }
-
 }

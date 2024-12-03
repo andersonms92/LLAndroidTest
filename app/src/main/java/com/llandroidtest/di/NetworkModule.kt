@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import com.data.utils.Constants.Companion.BASE_URL
+import com.google.android.apps.common.testing.accessibility.framework.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,6 +22,8 @@ import javax.inject.Singleton
 object NetworkModule {
 
     private const val CACHE_SIZE = 10 * 1024 * 1024
+//    Poderia usar um .env para armazenar esse token, mas vou deixar aqui
+    private const val gh = "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"
 
     @Singleton
     @Provides
@@ -35,11 +38,17 @@ object NetworkModule {
             .cache(cache)
             .addInterceptor { chain ->
                 var request = chain.request()
-                request = if (isNetworkAvailable(context)) {
-                    request.newBuilder().header("Cache-Control", "public, max-age=5").build()
-                } else {
-                    request.newBuilder().header("Cache-Control", "public, only-if-cached, max-stale=86400").build()
-                }
+                request = request.newBuilder()
+                    .header("Authorization", "Bearer $gh")
+                    .apply {
+                        request = if (isNetworkAvailable(context)) {
+                            request.newBuilder().header("Cache-Control", "public, max-age=5").build()
+                        } else {
+                            request.newBuilder().header("Cache-Control", "public, only-if-cached, max-stale=86400").build()
+                        }
+                    }
+                    .build()
+
                 chain.proceed(request)
             }
             .build()
