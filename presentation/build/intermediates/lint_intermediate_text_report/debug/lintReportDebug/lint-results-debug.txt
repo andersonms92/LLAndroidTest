@@ -1,0 +1,66 @@
+C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\src\main\java\com\llandroidtest\presentation\presentation\adapter\PullRequestsAdapter.kt:22: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged()
+        ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\src\main\java\com\llandroidtest\presentation\presentation\adapter\UserRepositoryAdapter.kt:61: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged()
+        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NotifyDataSetChanged":
+   The RecyclerView adapter's onNotifyDataSetChanged method does not specify
+   what about the data set has changed, forcing any observers to assume that
+   all existing items and structure may no longer be valid. `LayoutManager`s
+   will be forced to fully rebind and relayout all visible views.
+
+C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\src\main\res\layout\item_pull_request.xml:42: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\src\main\res\layout\item_user_repository.xml:18: Warning: Missing contentDescription attribute on image [ContentDescription]
+        <ImageView
+         ~~~~~~~~~
+C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\src\main\res\layout\item_user_repository.xml:75: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\src\main\res\layout\item_user_repository.xml:94: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+
+   Explanation for issues of type "ContentDescription":
+   Non-textual widgets like ImageViews and ImageButtons should use the
+   contentDescription attribute to specify a textual description of the widget
+   such that screen readers and other accessibility tools can adequately
+   describe the user interface.
+
+   Note that elements in application screens that are purely decorative and do
+   not provide any content or enable a user action should not have
+   accessibility content descriptions. In this case, set their descriptions to
+   @null. If your app's minSdkVersion is 16 or higher, you can instead set
+   these graphical elements' android:importantForAccessibility attributes to
+   no.
+
+   Note that for text fields, you should not set both the hint and the
+   contentDescription attributes since the hint will never be shown. Just set
+   the hint.
+
+   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
+
+C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\src\main\java\com\llandroidtest\presentation\presentation\adapter\UserRepositoryAdapter.kt:31: Warning: Number formatting does not take into account locale settings. Consider using String.format instead. [SetTextI18n]
+            forksCount.text = repository.forksCount.toString()
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Chaos\AndroidStudioProjects\LLAndroidTest\presentation\src\main\java\com\llandroidtest\presentation\presentation\adapter\UserRepositoryAdapter.kt:32: Warning: Number formatting does not take into account locale settings. Consider using String.format instead. [SetTextI18n]
+            likesCount.text = repository.stargazersCount.toString()
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+0 errors, 8 warnings

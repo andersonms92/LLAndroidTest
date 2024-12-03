@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/fragmentUserRepository">
+
+    <fragment
+        android:id="@+id/fragmentUserRepository"
+        android:name="com.presentation.ui.fragment.UserRepositoryFragment"
+        android:label="User Repositories">
+        <action
+            android:id="@+id/action_userRepository_to_pullRequests"
+            app:destination="@id/fragmentPullRequests">
+            <argument
+                android:name="owner"
+                app:argType="string" />
+            <argument
+                android:name="repo"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentPullRequests"
+        android:name="com.presentation.ui.fragment.PullRequestsFragment"
+        android:label="Pull Requests">
+        <argument
+            android:name="owner"
+            app:argType="string" />
+        <argument
+            android:name="repo"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

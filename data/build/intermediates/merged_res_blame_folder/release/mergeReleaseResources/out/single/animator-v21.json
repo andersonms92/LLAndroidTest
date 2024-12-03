@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.llandroidtest.data-release-31:/animator-v21/design_appbar_state_list_animator.xml",
+        "source": "com.llandroidtest.data-material-1.9.0-23:/animator-v21/design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "com.llandroidtest.data-release-31:/animator-v21/m3_appbar_state_list_animator.xml",
+        "source": "com.llandroidtest.data-material-1.9.0-23:/animator-v21/m3_appbar_state_list_animator.xml"
+    }
+]

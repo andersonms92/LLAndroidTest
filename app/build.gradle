@@ -6,8 +6,6 @@ plugins {
     id("kotlin-kapt")
 }
 
-//apply plugin: 'kotlin-kapt'
-
 android {
     namespace 'com.llandroidtest'
     compileSdk 35
@@ -29,14 +27,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.toVersion(libs.versions.java.get())
+        targetCompatibility JavaVersion.toVersion(libs.versions.java.get())
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = libs.versions.java.get()
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
 
     packaging {
@@ -54,43 +53,44 @@ android {
         viewBinding true
     }
 
+    testOptions {
+        unitTests {
+            animationsDisabled = true
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+
     dependencies {
-        implementation libs.fragmentKtx
-        implementation libs.androidx.navigation.ui.ktx
-
-        implementation libs.androidx.core.ktx
-        implementation libs.androidx.lifecycle.runtime.ktx
-        implementation libs.androidx.constraintlayout
-        implementation libs.androidx.cardview
-
-        // Glide
-        implementation libs.glide
-
-        // Material Design
-        implementation libs.materialDesign
-
-        // RecyclerView
-        implementation libs.androidx.recyclerview
-
-        // Retrofit e OkHTTP
-        implementation libs.retrofit
-        implementation libs.retrofit.gson
-        implementation libs.okhttp
-
-        // RxJava
-        implementation libs.rxjava
-        implementation libs.rxandroid
-        implementation libs.retrofit.adapter.rxjava3
+        implementation(project(":data"))
+        implementation(project(":domain"))
+        implementation(project(":presentation"))
 
         // Hilt
-        implementation libs.hilt.android
-        kapt libs.hilt.compiler
+        implementation(libs.hilt.android)
+        kapt (libs.hilt.compiler)
 
-        // Timber
-        implementation libs.timber
 
-        testImplementation libs.junit
-        androidTestImplementation libs.androidx.junit
-        androidTestImplementation libs.androidx.espresso.core
+        // Retrofit e OkHTTP
+        implementation(libs.retrofit)
+        implementation(libs.retrofit.gson)
+        implementation(libs.okhttp)
+
+        // Testes
+        testImplementation(libs.bundles.test)
+        implementation libs.androidx.junit.ktx
+        implementation libs.androidx.runner
+        implementation libs.androidx.espresso.core
+        implementation libs.androidx.espresso.contrib
+        implementation libs.androidx.navigation.testing
+        androidTestImplementation libs.androidx.fragment.testing.v157
+        implementation libs.androidx.espresso.intents
+
+        // Coroutines Reactive para permitir a interoperabilidade com RxJava
+        implementation libs.kotlinx.coroutines.reactive
+        implementation libs.rxjava
+        implementation libs.kotlinx.coroutines.rx3
+        implementation(libs.retrofit.adapter.rxjava3)
+
     }
 }

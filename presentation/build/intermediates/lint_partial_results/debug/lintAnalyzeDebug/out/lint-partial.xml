@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.6.0" type="partial_results">
+    <map id="UnusedResources">
+        <location id="R.string.app_name"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="2"
+            column="13"
+            startOffset="24"
+            endLine="2"
+            endColumn="28"
+            endOffset="39"/>
+        <location id="R.color.teal_700"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="7"
+            column="12"
+            startOffset="248"
+            endLine="7"
+            endColumn="27"
+            endOffset="263"/>
+        <location id="R.color.purple_700"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="5"
+            column="12"
+            startOffset="156"
+            endLine="5"
+            endColumn="29"
+            endOffset="173"/>
+        <location id="R.drawable.ic_launcher_foreground"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_launcher_foreground.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="30"
+            endColumn="10"
+            endOffset="1702"/>
+        <location id="R.color.purple_500"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="4"
+            column="12"
+            startOffset="109"
+            endLine="4"
+            endColumn="29"
+            endOffset="126"/>
+        <location id="R.color.purple_200"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="3"
+            column="12"
+            startOffset="62"
+            endLine="3"
+            endColumn="29"
+            endOffset="79"/>
+        <entry
+            name="model"
+            string="color[white(U),black(U),purple_200(D),purple_500(D),purple_700(D),teal_200(D),teal_700(D)],drawable[circle_background(U),ic_fork(U),ic_launcher_background(D),ic_launcher_foreground(D),ic_launcher_foreground_1(E),ic_like(U),ic_user(U)],font[roboto_medium(R),roboto(R)],id[header_layout(U),tv_opened_count(D),tv_closed_count(D),rv_pull_requests(D),recyclerViewUserRepositories(U),tv_pr_title(U),tv_pr_body(U),iv_user_avatar(U),tv_user_username(U),tv_user_name(U),imgUserPhoto(U),tvUserName(U),tvName(D),tvRepositoryName(U),tvRepositoryDescription(U),icForks(D),tvForksCount(U),icLikes(D),tvLikesCount(U),fragmentUserRepository(U),action_userRepository_to_pullRequests(R),fragmentPullRequests(U)],layout[fragment_pull_requests(U),fragment_user_repository(U),item_pull_request(U),item_user_repository(U)],navigation[nav_graph(D)],string[repository_description_tools(U),app_name(D)],style[Theme_LLAndroidTest(D),Theme_MaterialComponents_DayNight_NoActionBar(E)];7^0,a^b,26^e^10,28^d,29^0^7^d^f^e^1^2b^8^c,2a^23^25,2d^2e;;;"/>
+        <location id="R.drawable.ic_launcher_background"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_launcher_background.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="170"
+            endColumn="10"
+            endOffset="5605"/>
+        <location id="R.navigation.nav_graph"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/navigation/nav_graph.xml"
+            line="2"
+            column="1"
+            startOffset="40"
+            endLine="34"
+            endColumn="14"
+            endOffset="1238"/>
+        <location id="R.color.teal_200"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="6"
+            column="12"
+            startOffset="203"
+            endLine="6"
+            endColumn="27"
+            endOffset="218"/>
+        <location id="R.style.Theme_LLAndroidTest"
+            file="${:presentation*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="4"
+            column="12"
+            startOffset="66"
+            endLine="4"
+            endColumn="38"
+            endOffset="92"/>
+    </map>
+    <map id="UnsafeImplicitIntentLaunch">
+            <map id="actionsSent">
+                    <map id="android.intent.action.VIEW (used to start an activity)">
+                        <location id="0"
+                            file="${:presentation*debug*MAIN*sourceProvider*0*javaDir*0}/com/llandroidtest/presentation/presentation/ui/fragment/PullRequestsFragment.kt"
+                            line="49"
+                            column="33"
+                            startOffset="1851"
+                            endLine="49"
+                            endColumn="75"
+                            endOffset="1893"/>
+                    </map>
+            </map>
+    </map>
+    <map id="NotificationPermission">
+        <entry
+            name="className"
+            string="com/bumptech/glide/request/target/NotificationTarget"/>
+        <location id="class"
+            file="$GRADLE_USER_HOME/caches/transforms-4/04a5fdea2ebd11645c7b7ffd1beae44b/transformed/glide-4.15.1/jars/classes.jar"/>
+    </map>
+
+</incidents>

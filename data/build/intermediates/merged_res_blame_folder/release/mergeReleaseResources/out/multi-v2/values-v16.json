@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.llandroidtest.data-mergeReleaseResources-29:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\e880aed5aa83db24ec7bbf060f64c1cc\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.llandroidtest.data-release-31:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\e880aed5aa83db24ec7bbf060f64c1cc\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        }
+    ]
+}

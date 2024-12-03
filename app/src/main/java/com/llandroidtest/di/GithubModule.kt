@@ -1,8 +1,5 @@
 package com.llandroidtest.di
 
-import com.llandroidtest.data.remote.GithubApi
-import com.llandroidtest.domain.repository.GithubRepository
-import com.llandroidtest.domain.repository.GithubRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +12,7 @@ object GithubModule {
 
     @Singleton
     @Provides
-    fun provideGithubRepository(githubApi: GithubApi): GithubRepository {
-        return GithubRepositoryImpl(githubApi)
+    fun provideGithubRepository(githubApi: com.data.remote.GithubApi): com.domain.repository.GithubRepository {
+        return com.data.repository.GithubRepositoryImpl(githubApi)
     }
 }
