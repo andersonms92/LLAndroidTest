@@ -12,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.llandroidtest.R
 import com.llandroidtest.databinding.FragmentPullRequestsBinding
+import com.llandroidtest.databinding.FragmentUserRepositoryBinding
 import com.llandroidtest.presentation.adapter.PullRequestsAdapter
 import com.llandroidtest.presentation.viewmodel.Resource
 import com.llandroidtest.presentation.viewmodel.SharedViewModel
@@ -20,7 +21,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class PullRequestsFragment : Fragment() {
 
-    private val binding by lazy { FragmentPullRequestsBinding.bind(requireView()) }
+    private var _binding: FragmentPullRequestsBinding? = null
+    private val binding get() = _binding!!
+
     private val sharedViewModel: SharedViewModel by activityViewModels()
     lateinit var adapter: PullRequestsAdapter
 
@@ -29,7 +32,8 @@ class PullRequestsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_pull_requests, container, false)
+        _binding = FragmentPullRequestsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -86,9 +90,9 @@ class PullRequestsFragment : Fragment() {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        sharedViewModel.resetPagination()
-    }
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        sharedViewModel.resetPagination()
+//    }
 
 }

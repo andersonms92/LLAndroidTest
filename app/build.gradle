@@ -55,10 +55,6 @@ android {
         viewBinding true
     }
 
-    kotlinOptions {
-        jvmTarget = '11'
-    }
-
     testOptions {
         unitTests {
             animationsDisabled = true
@@ -111,6 +107,19 @@ android {
         implementation libs.androidx.navigation.testing
         androidTestImplementation libs.androidx.fragment.testing.v157
         implementation libs.androidx.espresso.intents
+
+//        // Dependências do Hilt
+////        implementation "com.google.dagger:hilt-android:2.48"
+////        kapt "com.google.dagger:hilt-android-compiler:2.48"
+//
+//// Dependências para testes
+////        androidTestImplementation "com.google.dagger:hilt-android-testing:2.48"
+////        kaptAndroidTest "com.google.dagger:hilt-android-compiler:2.48"
+//
+//// Para testes unitários (opcional)
+//        testImplementation "com.google.dagger:hilt-android-testing:2.48"
+//        kaptTest "com.google.dagger:hilt-android-compiler:2.48"
+
 
         // Coroutines Reactive para permitir a interoperabilidade com RxJava
         implementation libs.kotlinx.coroutines.reactive
