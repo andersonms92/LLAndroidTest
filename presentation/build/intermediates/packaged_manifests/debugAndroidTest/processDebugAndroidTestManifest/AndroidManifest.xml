@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.llandroidtest.presentation.test" >
+    package="com.presentation.test" >
 
     <uses-sdk
         android:minSdkVersion="29"
@@ -10,8 +10,8 @@
         android:name="androidx.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.llandroidtest.presentation.test"
-        android:targetPackage="com.llandroidtest.presentation.test" />
+        android:label="Tests for com.presentation.test"
+        android:targetPackage="com.presentation.test" />
 
     <queries>
         <package android:name="androidx.test.orchestrator" />
@@ -20,13 +20,12 @@
     </queries>
 
     <uses-permission android:name="android.permission.REORDER_TASKS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <permission
-        android:name="com.llandroidtest.presentation.test.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.presentation.test.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.llandroidtest.presentation.test.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.presentation.test.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -61,7 +60,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.llandroidtest.presentation.test.androidx-startup"
+            android:authorities="com.presentation.test.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
