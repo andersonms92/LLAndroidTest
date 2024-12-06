@@ -54,7 +54,7 @@ class SharedViewModel @Inject constructor(
                         _repositories.postValue(Resource.Error(response.message))
                     }
 
-                    is Resource.Loading -> {}
+                    is Resource.Loading -> { isLoading = true }
                 }
             } catch (e: Exception) {
                 val errorMessage = getErrorMessage(e)
@@ -81,7 +81,7 @@ class SharedViewModel @Inject constructor(
                         _pullRequests.postValue(Resource.Error(response.message))
                     }
 
-                    is Resource.Loading -> {}
+                    is Resource.Loading -> { isLoading = true }
                 }
             } catch (e: Exception) {
                 val errorMessage = getErrorMessage(e)
@@ -106,7 +106,7 @@ class SharedViewModel @Inject constructor(
                         _pullRequestsClosed.postValue(Resource.Error(response.message))
                     }
 
-                    is Resource.Loading -> {}
+                    is Resource.Loading -> { isLoading = true }
                 }
             } catch (e: Exception) {
                 val errorMessage = getErrorMessage(e)

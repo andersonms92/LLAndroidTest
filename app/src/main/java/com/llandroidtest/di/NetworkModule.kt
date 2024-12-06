@@ -22,7 +22,6 @@ import javax.inject.Singleton
 object NetworkModule {
 
     private const val CACHE_SIZE = 10 * 1024 * 1024
-
     @Singleton
     @Provides
     fun provideCache(@ApplicationContext  context: Context): Cache {
