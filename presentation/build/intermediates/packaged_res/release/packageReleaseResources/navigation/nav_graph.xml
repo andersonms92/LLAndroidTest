@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/fragmentUserRepository"
-        android:name="com.llandroidtest.presentation.presentation.ui.fragment.UserRepositoryFragment"
+        android:name="com.presentation.ui.fragment.UserRepositoryFragment"
         android:label="User Repositories">
         <action
             android:id="@+id/action_userRepository_to_pullRequests"
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/fragmentPullRequests"
-        android:name="com.llandroidtest.presentation.presentation.ui.fragment.PullRequestsFragment"
+        android:name="com.presentation.ui.fragment.PullRequestsFragment"
         android:label="Pull Requests">
         <argument
             android:name="owner"

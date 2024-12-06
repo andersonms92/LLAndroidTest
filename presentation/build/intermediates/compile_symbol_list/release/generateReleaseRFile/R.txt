@@ -9,7 +9,7 @@ int drawable circle_background 0x0
 int drawable ic_fork 0x0
 int drawable ic_launcher_background 0x0
 int drawable ic_launcher_foreground 0x0
-int drawable ic_like 0x0
+int drawable ic_star 0x0
 int drawable ic_user 0x0
 int font roboto 0x0
 int font roboto_medium 0x0
@@ -21,8 +21,11 @@ int id icForks 0x0
 int id icLikes 0x0
 int id imgUserPhoto 0x0
 int id iv_user_avatar 0x0
+int id nav_host_fragment 0x0
+int id progressBarLoading 0x0
 int id recyclerViewUserRepositories 0x0
 int id rv_pull_requests 0x0
+int id toolbar 0x0
 int id tvForksCount 0x0
 int id tvLikesCount 0x0
 int id tvName 0x0
@@ -35,11 +38,16 @@ int id tv_pr_body 0x0
 int id tv_pr_title 0x0
 int id tv_user_name 0x0
 int id tv_user_username 0x0
+int layout activity_main 0x0
 int layout fragment_pull_requests 0x0
 int layout fragment_user_repository 0x0
 int layout item_pull_request 0x0
 int layout item_user_repository 0x0
+int mipmap ic_launcher 0x0
+int mipmap ic_launcher_round 0x0
 int navigation nav_graph 0x0
 int string app_name 0x0
 int string repository_description_tools 0x0
 int style Theme_LLAndroidTest 0x0
+int xml backup_rules 0x0
+int xml data_extraction_rules 0x0

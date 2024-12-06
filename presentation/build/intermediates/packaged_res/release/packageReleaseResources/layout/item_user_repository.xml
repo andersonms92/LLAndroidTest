@@ -9,13 +9,13 @@
     app:cardElevation="4dp"
     app:cardBackgroundColor="@color/white">
 
-    <LinearLayout
+    <com.google.android.material.circularreveal.CircularRevealLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgUserPhoto"
             android:layout_width="64dp"
             android:layout_height="64dp"
@@ -25,7 +25,7 @@
             android:background="@drawable/circle_background"
             android:layout_marginBottom="8dp" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="12sp" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvRepositoryName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
             android:textColor="@color/black"
             android:textSize="14sp" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvRepositoryDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,20 +65,20 @@
             android:textSize="12sp"
             android:textColor="@android:color/black" />
 
-        <LinearLayout
+        <com.google.android.material.circularreveal.CircularRevealLinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:orientation="horizontal"
             android:layout_gravity="start">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icForks"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_fork"
                 android:layout_marginEnd="4dp" />
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvForksCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,13 +91,13 @@
                 android:layout_width="16dp"
                 android:layout_height="0dp" />
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icLikes"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_like"
+                android:src="@drawable/ic_star"
                 android:layout_marginEnd="4dp" />
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvLikesCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -105,6 +105,6 @@
                 android:textSize="12sp"
                 android:fontFamily="@font/roboto"
                 android:textColor="@android:color/holo_orange_dark" />
-        </LinearLayout>
-    </LinearLayout>
+        </com.google.android.material.circularreveal.CircularRevealLinearLayout>
+    </com.google.android.material.circularreveal.CircularRevealLinearLayout>
 </androidx.cardview.widget.CardView>

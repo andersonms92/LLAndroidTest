@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.llandroidtest.presentation.test.presentation-mergeDebugAndroidTestResources-50:/values-watch-v21/values-watch-v21.xml",
+            "outputFile": "com.presentation.test.presentation-mergeDebugAndroidTestResources-49:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\e880aed5aa83db24ec7bbf060f64c1cc\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\05a7b1dce5eac1357bccd86ebbbcfae0\\transformed\\appcompat-1.7.0\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

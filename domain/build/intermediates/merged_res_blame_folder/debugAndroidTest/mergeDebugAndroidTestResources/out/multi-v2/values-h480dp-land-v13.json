@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.llandroidtest.domain.test.domain-mergeDebugAndroidTestResources-30:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
+            "outputFile": "com.domain.test.domain-mergeDebugAndroidTestResources-30:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\e3d61e381403f2729e29eaf748abe2ff\\transformed\\material-1.9.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\c3ce59952ffb9495149acbf89eca041f\\transformed\\material-1.9.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

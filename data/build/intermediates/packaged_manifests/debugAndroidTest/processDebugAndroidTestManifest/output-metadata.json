@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.llandroidtest.data.test",
+  "applicationId": "com.data.test",
   "variantName": "debugAndroidTest",
   "elements": [
     {

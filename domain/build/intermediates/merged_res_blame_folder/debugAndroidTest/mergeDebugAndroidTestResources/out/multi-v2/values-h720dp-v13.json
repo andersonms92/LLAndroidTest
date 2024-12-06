@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.llandroidtest.domain.test.domain-mergeDebugAndroidTestResources-30:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.domain.test.domain-mergeDebugAndroidTestResources-30:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\e880aed5aa83db24ec7bbf060f64c1cc\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\05a7b1dce5eac1357bccd86ebbbcfae0\\transformed\\appcompat-1.7.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

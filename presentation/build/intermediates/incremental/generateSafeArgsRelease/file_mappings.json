@@ -1,1 +1,1 @@
-[{"navFile":"src\\main\\res\\navigation\\nav_graph.xml","javaFiles":["com.llandroidtest.presentation.presentation.ui.fragment.UserRepositoryFragmentDirections","com.llandroidtest.presentation.presentation.ui.fragment.PullRequestsFragmentArgs"]}]
+[{"navFile":"src\\main\\res\\navigation\\nav_graph.xml","javaFiles":["com.presentation.ui.fragment.UserRepositoryFragmentDirections","com.presentation.ui.fragment.PullRequestsFragmentArgs"]}]

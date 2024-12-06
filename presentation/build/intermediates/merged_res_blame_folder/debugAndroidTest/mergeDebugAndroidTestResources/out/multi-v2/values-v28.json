@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "com.llandroidtest.presentation.test.presentation-mergeDebugAndroidTestResources-50:/values-v28/values-v28.xml",
+            "outputFile": "com.presentation.test.presentation-mergeDebugAndroidTestResources-49:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\e3d61e381403f2729e29eaf748abe2ff\\transformed\\material-1.9.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\6f1390bcb5d069dfd08c08a9f98f5a5c\\transformed\\core-1.5.0\\res\\values-v28\\values.xml",
+                    "from": {
+                        "startLines": "4,13",
+                        "startColumns": "0,0",
+                        "startOffsets": "180,659",
+                        "endLines": "12,21",
+                        "endColumns": "8,8",
+                        "endOffsets": "658,1135"
+                    },
+                    "to": {
+                        "startLines": "24,33",
+                        "startColumns": "4,4",
+                        "startOffsets": "1675,2158",
+                        "endLines": "32,41",
+                        "endColumns": "8,8",
+                        "endOffsets": "2153,2634"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\c3ce59952ffb9495149acbf89eca041f\\transformed\\material-1.9.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,26 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\2dd9cb9b97e0e122c9e57ccf32dc61c5\\transformed\\core-1.6.1\\res\\values-v28\\values.xml",
-                    "from": {
-                        "startLines": "4,13",
-                        "startColumns": "0,0",
-                        "startOffsets": "146,625",
-                        "endLines": "12,21",
-                        "endColumns": "8,8",
-                        "endOffsets": "624,1101"
-                    },
-                    "to": {
-                        "startLines": "24,33",
-                        "startColumns": "4,4",
-                        "startOffsets": "1675,2158",
-                        "endLines": "32,41",
-                        "endColumns": "8,8",
-                        "endOffsets": "2153,2634"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\e880aed5aa83db24ec7bbf060f64c1cc\\transformed\\appcompat-1.6.1\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\Chaos\\.gradle\\caches\\transforms-4\\05a7b1dce5eac1357bccd86ebbbcfae0\\transformed\\appcompat-1.7.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
