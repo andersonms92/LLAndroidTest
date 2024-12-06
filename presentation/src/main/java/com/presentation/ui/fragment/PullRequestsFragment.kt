@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.domain.model.PullRequest
 import com.presentation.adapter.PullRequestsAdapter
 import com.presentation.databinding.FragmentPullRequestsBinding
 import com.domain.usecase.Resource
@@ -56,35 +57,59 @@ class PullRequestsFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        sharedViewModel.pullRequests.observe(viewLifecycleOwner) {
-            when (it) {
-                is Resource.Loading -> {
-                }
-                is Resource.Success -> {
-                    binding.progressBarLoading.visibility = View.GONE
-                    val pullRequests = it.data
-                    adapter.submitList(pullRequests)
-                    "${pullRequests.size} opened".also { binding.tvOpenedCount.text = it }
-                 }
-                is Resource.Error -> {
-                    binding.progressBarLoading.visibility = View.GONE
-                }
+        sharedViewModel.pullRequests.observe(viewLifecycleOwner) { resource ->
+            when (resource) {
+                is Resource.Loading -> showLoading()
+                is Resource.Success -> showOpenPullRequests(resource.data)
+                is Resource.Error -> showError()
             }
         }
-        sharedViewModel.pullRequestsClosed.observe(viewLifecycleOwner) {
-            when (it) {
-                is Resource.Loading -> {
-                    binding.progressBarLoading.visibility = View.VISIBLE
-                }
-                is Resource.Success -> {
-                    binding.progressBarLoading.visibility = View.GONE
-                    val pullRequests = it.data.size
-                    "/ $pullRequests closed".also { binding.tvClosedCount.text = it }
-                }
-                is Resource.Error -> {
-                    binding.progressBarLoading.visibility = View.GONE
-                }
+        sharedViewModel.pullRequestsClosed.observe(viewLifecycleOwner) { resource ->
+            when (resource) {
+                is Resource.Loading -> showLoading()
+                is Resource.Success -> showClosedPullRequests(resource.data)
+                is Resource.Error -> showClosedError()
             }
         }
     }
+
+    private fun showLoading() {
+        binding.progressBarLoading.visibility = View.VISIBLE
+        binding.tvEmptyMessage.visibility = View.GONE
+    }
+
+    private fun showOpenPullRequests(pullRequests: List<PullRequest>) {
+        binding.progressBarLoading.visibility = View.GONE
+        adapter.submitList(pullRequests)
+        binding.tvOpenedCount.text = "${pullRequests.size} opened"
+        updateEmptyMessageVisibility()
+    }
+
+    private fun showError() {
+        binding.progressBarLoading.visibility = View.GONE
+        binding.tvOpenedCount.text = "0 opened"
+        adapter.submitList(emptyList())
+        updateEmptyMessageVisibility()
+    }
+
+    private fun showClosedPullRequests(pullRequests: List<PullRequest>) {
+        binding.progressBarLoading.visibility = View.GONE
+        binding.tvClosedCount.text = "/ ${pullRequests.size} closed"
+    }
+
+    private fun showClosedError() {
+        binding.progressBarLoading.visibility = View.GONE
+        binding.tvClosedCount.text = "/ 0 closed"
+    }
+
+    private fun updateEmptyMessageVisibility() {
+        val openedCount = (sharedViewModel.pullRequests.value as? Resource.Success)?.data?.size ?: 0
+
+        binding.tvEmptyMessage.visibility = if (openedCount == 0) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
+    }
+
 }

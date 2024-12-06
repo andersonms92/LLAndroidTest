@@ -8,6 +8,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">LLAndroidTest</string>
+    <string name="nenhum_pull_request_aberto">Nenhum pull request aberto</string>
     <string name="repository_description_tools">Criar um aplicativo para consultar a API do GitHub e trazer os repositórios mais populares de Java.</string>
     <style name="Theme.LLAndroidTest" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@android:color/holo_blue_dark</item>

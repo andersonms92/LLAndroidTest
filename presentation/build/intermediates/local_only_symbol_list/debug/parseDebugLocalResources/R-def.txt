@@ -35,6 +35,7 @@ id tvRepositoryDescription
 id tvRepositoryName
 id tvUserName
 id tv_closed_count
+id tv_empty_message
 id tv_opened_count
 id tv_pr_body
 id tv_pr_title
@@ -49,6 +50,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
 string app_name
+string nenhum_pull_request_aberto
 string repository_description_tools
 style Theme.LLAndroidTest
 xml backup_rules
